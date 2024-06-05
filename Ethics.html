@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ethics Course</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;700&display=swap" rel="stylesheet">
+  <style>
+    html {
+      --s: 50px;
+      --c: #191b22;
+      --_s: calc(2*var(--s)) calc(2*var(--s));
+      --_g: 35.36% 35.36% at;
+      --_c: #0000 66%,#20222a 68% 70%,#0000 72%;
+      background: 
+        radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s), 
+        radial-gradient(var(--_g) 0 75%,var(--_c)) var(--s) var(--s)/var(--_s), 
+        radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s), 
+        radial-gradient(var(--_g) 0 75%,var(--_c)) 0 0/var(--_s), 
+        repeating-conic-gradient(var(--c) 0 25%,#0000 0 50%) 0 0/var(--_s), 
+        radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+      background-attachment: fixed;
+    }
+    body {
+      font-family: 'Fantasy', Fantasy;
+
+      background-color: transparent;
+      color: white;
+      padding: 20px;
+    }
+    .content {
+      max-width: 800px;
+      margin: auto;
+    }
+    .content h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .resources ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .ag-courses_box {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding: 50px 0;
+    }
+    .ag-courses_item {
+      flex-basis: calc(33.33333% - 30px);
+      margin: 0 15px 30px;
+      overflow: hidden;
+      border-radius: 28px;
+    }
+    .ag-courses-item_link {
+      display: block;
+      padding: 30px 20px;
+      background-color: #121212;
+      overflow: hidden;
+      position: relative;
+    }
+    .ag-courses-item_link:hover,
+    .ag-courses-item_link:hover .ag-courses-item_date {
+      text-decoration: none;
+      color: #FFF;
+    }
+    .ag-courses-item_link:hover .ag-courses-item_bg {
+      transform: scale(10);
+    }
+    .ag-courses-item_title {
+      min-height: 87px;
+      margin: 0 0 25px;
+      overflow: hidden;
+      font-weight: bold;
+      font-size: 20px;
+      color: #FFF;
+      z-index: 2;
+      position: relative;
+    }
+    .ag-courses-item_date-box {
+      font-size: 18px;
+      color: #FFF;
+      z-index: 2;
+      position: relative;
+    }
+    .ag-courses-item_date {
+      font-weight: bold;
+      color: #f9b234;
+      transition: color .5s ease;
+    }
+    .ag-courses-item_bg {
+      height: 128px;
+      width: 128px;
+      background-color: #f9b234;
+      z-index: 1;
+      position: absolute;
+      top: -75px;
+      right: -75px;
+      border-radius: 50%;
+      transition: all .5s ease;
+    }
+    .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+      background-color: #3ecd5e;
+    }
+    .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+      background-color: #e44002;
+    }
+    .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+      background-color: #952aff;
+    }
+    .ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+      background-color: #cd3e94;
+    }
+    .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
+      background-color: #4c49ea;
+    }
+
+    @media only screen and (max-width: 979px) {
+      .ag-courses_item {
+        flex-basis: calc(50% - 30px);
+      }
+      .ag-courses-item_title {
+        font-size: 24px;
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      .ag-format-container {
+        width: 96%;
+      }
+    }
+
+    @media only screen and (max-width: 639px) {
+      .ag-courses_item {
+        flex-basis: 100%;
+      }
+      .ag-courses-item_title {
+        min-height: 72px;
+        line-height: 1;
+        font-size: 24px;
+      }
+      .ag-courses-item_link {
+        padding: 22px 40px;
+      }
+      .ag-courses-item_date-box {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>Ethics Course</h1>
+    <p>Welcome to the Ethics course. Here you will find various resources to help you learn Ethics concepts.</p>
+    <div class="resources">
+    
+    <!------------------------------------------------------>
+    
+      <h2>INTRODUCTION</h2>
+      <div class="ag-courses_box">
+        <div class="ag-courses_item">
+          <a href="IwZXh0bgNhZW0CMTAAAR0b3G0yaxGpzE8A2GD6QKIKAlM1vjvzmwvJEcaKXilTWbFpiqayOyOBHiM_aem_AcRmj1fd3wYlAJyoOybCSDKWhNP4J_oH0KsLAzN2BZrn3RYuTxYVhnJyJ0WUksU3nTxIbKp9" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">الكتاب</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">PDF</div>
+            </div>
+          </a>
+        </div>
+        <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/folders/1t4m0WtNEjp56DkSDtdDq1kdH3kzL8Acu?fbclid=IwZXh0bgNhZW0CMTAAAR3DfpEjl-tQapFSOb33ziRFb1N74BjIKRX0BkSc6DB34FHD4a29NIntoxU_aem_AcT5GE24_4GCFxV0lMtxU304PL9pwVFmSTJPDhErjkfKt6ZJcrcvB8xTG4ftcDxn_mdzhfdpxe7fP2_tKEkAXXMs" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">السلايدات </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">PDF</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      
+      <!------------------------------------------------------>
+      
+    
+        
+      <!------------------------------------------------------>
+      
+       
+      <h2>PDF'S</h2>
+      <div class="ag-courses_box">
+        <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/folders/11iZF6mq2zzxEJ-Eg4eaYb4MMxHM0ZBPg?fbclid=IwZXh0bgNhZW0CMTAAAR352Z_Vv0JCeu3YvnB5lgrLyINbnN5sVJ5ECUCmSlOnk3G77TfIHUTauL0_aem_AcSCzc2JMUF_Ou1kGngNZtEQg8FzlMeKNJq2zGJqkgo11dkWdyCdOcwDWfo1VsZ3KMu6f_siNZE9mwRmmi4UWS82" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">  السلايدات (ترجمة  تالا ابو دحيس )  </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">PDF</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      
+ <!------------------------------------------------------>
+ 
+      
+        <h2>QS & BAST YEARS</h2>
+        
+      <div class="ag-courses_box">
+        <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/folders/1oU_5gqCdrbikDHViYd8IzpGbh8aJSACP?fbclid=IwZXh0bgNhZW0CMTAAAR23zIk8aGY9o05N1-yOnI4pHl5zAWIGGaOmtqZ0lYNH2-ya9JPltmIT3_0_aem_AcRq5SdMwdCa7N_tVuj5ebVEG6nH7NP36nRfT8uLqLUQLNE8aWLQwSb_IC6XMpcWlnjWahv4cRDqOAsllBPxdXM7" class="ag-courses-item_link" >
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> سنوات</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/folders/1l_AO9Utaepih2HvIrlP7UEY4vSOTeuiQ?fbclid=IwZXh0bgNhZW0CMTAAAR0ENsY_WQYSyyOv4rWA80k4eIAAQu_oPdEKVfRtNuObjygIr5GSMkVILz0_aem_AcRdQI86-_3Q1ROExjTBXWXXRJ1RhWzTOqTYHXg6mQqEznKL47QG3siR8fqrVwmrePj67ZmphRQvTy5BLjNGeOst" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">كويزين على شابتر 1+2</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+        
+      </div>
+    
+    
+  </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>"MATH INTERMEDIATE ANALYSIS" Course</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;700&display=swap" rel="stylesheet">
+  <style>
+    html {
+      --s: 50px;
+      --c: #191b22;
+      --_s: calc(2*var(--s)) calc(2*var(--s));
+      --_g: 35.36% 35.36% at;
+      --_c: #0000 66%,#20222a 68% 70%,#0000 72%;
+      background: 
+        radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s), 
+        radial-gradient(var(--_g) 0 75%,var(--_c)) var(--s) var(--s)/var(--_s), 
+        radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s), 
+        radial-gradient(var(--_g) 0 75%,var(--_c)) 0 0/var(--_s), 
+        repeating-conic-gradient(var(--c) 0 25%,#0000 0 50%) 0 0/var(--_s), 
+        radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+      background-attachment: fixed;
+    }
+    body {
+      --dot-bg: black;
+  --dot-color: white;
+  --dot-size: 1px;
+  --dot-space: 22px;
+	background:
+		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 1%) center / var(--dot-space) var(--dot-space),
+		var(--dot-color);
+    }
+    .content {
+      max-width: 800px;
+      margin: auto;
+      color:#ffffff;
+    }
+    .content h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .resources ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .ag-courses_box {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding: 50px 0;
+    }
+    .ag-courses_item {
+      flex-basis: calc(33.33333% - 30px);
+      margin: 0 15px 30px;
+      overflow: hidden;
+      border-radius: 28px;
+    }
+    .ag-courses-item_link {
+      display: block;
+      padding: 30px 20px;
+      background-color: #121212;
+      overflow: hidden;
+      position: relative;
+    }
+    .ag-courses-item_link:hover,
+    .ag-courses-item_link:hover .ag-courses-item_date {
+      text-decoration: none;
+      color: #FFF;
+    }
+    .ag-courses-item_link:hover .ag-courses-item_bg {
+      transform: scale(10);
+    }
+    .ag-courses-item_title {
+      min-height: 87px;
+      margin: 0 0 25px;
+      overflow: hidden;
+      font-weight: bold;
+      font-size: 20px;
+      color: #FFF;
+      z-index: 2;
+      position: relative;
+    }
+    .ag-courses-item_date-box {
+      font-size: 18px;
+      color: #FFF;
+      z-index: 2;
+      position: relative;
+    }
+    .ag-courses-item_date {
+      font-weight: bold;
+      color: #f9b234;
+      transition: color .5s ease;
+    }
+    .ag-courses-item_bg {
+      height: 128px;
+      width: 128px;
+      background-color: #f9b234;
+      z-index: 1;
+      position: absolute;
+      top: -75px;
+      right: -75px;
+      border-radius: 50%;
+      transition: all .5s ease;
+    }
+    .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+      background-color: #3ecd5e;
+    }
+    .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+      background-color: #e44002;
+    }
+    .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+      background-color: #952aff;
+    }
+    .ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+      background-color: #cd3e94;
+    }
+    .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
+      background-color: #4c49ea;
+    }
+
+    @media only screen and (max-width: 979px) {
+      .ag-courses_item {
+        flex-basis: calc(50% - 30px);
+      }
+      .ag-courses-item_title {
+        font-size: 24px;
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      .ag-format-container {
+        width: 96%;
+      }
+    }
+
+    @media only screen and (max-width: 639px) {
+      .ag-courses_item {
+        flex-basis: 100%;
+      }
+      .ag-courses-item_title {
+        min-height: 72px;
+        line-height: 1;
+        font-size: 24px;
+      }
+      .ag-courses-item_link {
+        padding: 22px 40px;
+      }
+      .ag-courses-item_date-box {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>PHYSICS LAB Course</h1>
+    <p>Welcome to the "MATH INTERMEDIATE ANALYSIS" course. Here you will find various resources to help you learn "MATH INTERMEDIATE ANALYSIS" concepts.</p>
+    <div class="resources">
+    
+    <!------------------------------------------------------>
+    
+      <h2>INTRODUCTION</h2>
+      <div class="ag-courses_box">
+        <div class="ag-courses_item">
+          <a href="https://drive.google.com/file/d/1ybmvia7tBnxT09CNRuI98IqhFnlSrHdH/view?fbclid=IwZXh0bgNhZW0CMTAAAR3Y9IGhHgtbDR2DChhBxN83bMxGxZgVe1tmpaljZAgKgCeB7XtLY7oJfz4_aem_ARUiK0VmsOKj5mlrXLrI3QyDbhJthzdaCMbncs9mgP017oDg0g4WK_UrMsmB6gKdQiN2ZdijGjhOqH9TQ8NmeOlH" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> كتاب</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+        
+        
+        
+        <div class="ag-courses_item">
+          <a href="https://www.facebook.com/groups/386163282139167/" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> جروب المادة </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">facebook</div>
+            </div>
+          </a>
+        </div>
+        
+        
+        
+        
+        
+      </div>
+      
+      
+      <!------------------------------------------------------>
+      
+      
+      <h2>VEDIOS</h2>
+      
+      <div class="ag-courses_box">
+        <div class="ag-courses_item">
+          <a href="https://www.youtube.com/playlist?list=PLy42_pl2XRL7Tr8YfDbI60mu2LMksDgwo&fbclid=IwZXh0bgNhZW0CMTAAAR2ee0DAqCDKJ6nRJWY1UA40Yrj3Cw_RkQBpSlDIT6QQjxxfs8rKPDTuMYk_aem_ARVwBN0W0bYuYxVTv0B3DFSI-ZjMDpqq_001LZIYsLlnHmW5bGu96f18FpJJ_JYbxldOk7rj9kUjs_unxXjf_v3N" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">❤️ فيديوهات اللاب على قناة جسني عاليوتيوب</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">youtube</div>
+            </div>
+          </a>
+        </div>
+        
+       
+        <div class="ag-courses_item">
+          <a href="https://www.youtube.com/playlist?list=PLLVId32AfHpqkaY4eaULLYG-mRWTGXAGD&fbclid=IwZXh0bgNhZW0CMTAAAR14GwqcwymGrjqWgnidvMqk8OxhqQ193JSVmoLDrFwlzFCSrso8BVGKw1E_aem_ARVtIL2fQVgn7guID_dUEsIkFBgh0MhjyB9R4dZ0XR-F389oQYK53HP-3gYTWY5RjQsS2_9-ZHJHQAzXDlr8NZWg" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> المهندس عبدالله نقاوة </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">youtube</div>
+            </div>
+          </a>
+        </div>
+        
+        
+       
+        <div class="ag-courses_item">
+          <a href="https://www.youtube.com/playlist?list=PLDesaqWTN6ESk16YRmzuJ8f6-rnuy0Ry7" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">البروفسور ليونارد</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">youtube</div>
+            </div>
+          </a>
+        </div>
+        
+        
+        
+         
+        <div class="ag-courses_item">
+          <a href="https://www.youtube.com/playlist?list=PLJPpPM-Ltxf-KotFGX4EtoOqeNQO5nlu-" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">محاضرات الدكتور سامر القور</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">youtube</div>
+            </div>
+          </a>
+        </div>
+        
+        
+        
+        
+         
+        <div class="ag-courses_item">
+          <a href="https://www.youtube.com/playlist?list=PLDesaqWTN6ESk16YRmzuJ8f6-rnuy0Ry7" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">البروفسور ليونارد</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">youtube</div>
+            </div>
+          </a>
+        </div>
+        
+        
+        
+        
+         
+        <div class="ag-courses_item">
+          <a href="https://www.youtube.com/playlist?list=PLDesaqWTN6ESk16YRmzuJ8f6-rnuy0Ry7" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">البروفسور ليونارد</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">youtube</div>
+            </div>
+          </a>
+        </div>
+        
+        
+         
+        <div class="ag-courses_item">
+          <a href="https://www.youtube.com/playlist?list=PLDesaqWTN6ESk16YRmzuJ8f6-rnuy0Ry7" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">البروفسور ليونارد</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">youtube</div>
+            </div>
+          </a>
+        </div>
+        
+        
+        
+        <div class="ag-courses_item">
+          <a href="https://www.youtube.com/playlist?list=PLDesaqWTN6ESk16YRmzuJ8f6-rnuy0Ry7" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">البروفسور ليونارد</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">youtube</div>
+            </div>
+          </a>
+        </div>
+        
+         <div class="ag-courses_item">
+          <a href="https://www.youtube.com/playlist?list=PLp1pnSnaaByLLOXwgUiPGqXRd_zBa-TnO" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">فيديوهات الدكتور عبد اللطيف يوسف</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">youtube</div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="ag-courses_item">
+          <a href="https://www.youtube.com/playlist?list=PLrslSNfs_bOBEN7KpP-0uQ1A3jFCnFRmV" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> Sigma شرح فريق  </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">youtube</div>
+            </div>
+          </a>
+        </div>
+        
+        
+         </div>
+    
+      
+      <!------------------------------------------------------>
+      
+       
+      <h2>PDF'S</h2>
+      <div class="ag-courses_box">
+      
+        <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/folders/1-v7kYF1jIO7V5TzCRaavtFeFYWN68MDD?fbclid=IwZXh0bgNhZW0CMTAAAR1Nmlh3J8nSxkgOOJtS6lkLKPKEJ3LngO1T90xSPJygDZuXXyKrdkSmDZA_aem_ARVkhn4OG7Ef7MVZYqulqpyLHSNHmgMQ5zJZzyq0aqOxeyQbWhCXrTYTQVrnl61vdU90YC8fBC5kCBNI86EEdLpw" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">⁩شرح مجد غانم  </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+        
+       
+        <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/folders/1-v7kYF1jIO7V5TzCRaavtFeFYWN68MDD?fbclid=IwZXh0bgNhZW0CMTAAAR1Nmlh3J8nSxkgOOJtS6lkLKPKEJ3LngO1T90xSPJygDZuXXyKrdkSmDZA_aem_ARVkhn4OG7Ef7MVZYqulqpyLHSNHmgMQ5zJZzyq0aqOxeyQbWhCXrTYTQVrnl61vdU90YC8fBC5kCBNI86EEdLpw" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> دفتر سدين ريحان للدكتور سامر القور   </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+       
+       
+       
+          <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/folders/1-kf2ENPbjwYZsqn_bSa53EE3LCB9scmB?fbclid=IwZXh0bgNhZW0CMTAAAR0YASjWeH0xgIccDmemip5V1u77hzk4VDkeCMNlb4iNUiefAWlEhjKvijA_aem_ARVI7VyIJ3vb8WKXkj_QffoZ7J39Y-MrEbF0N9uhLpxwkqZkaN5zPZR9WArp5bsZSOVex1LG4WfsUVALm96tAQPV" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> ⁩المكملات  </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+        
+        
+          <div class="ag-courses_item">
+          <a href="https://drive.google.com/file/d/1WC8uGjFGaFpdeq4EuopV_UPRo3EgusGi/view?fbclid=IwZXh0bgNhZW0CMTAAAR1RxW6SkkOMNfuxVNLAtaJd4rS5AIjHiqefCJKvkmd4PwM95tnP1k1ErJA_aem_ARU5b74-wTdzWySFzzXvhX8r2lMPCf798m_AvfzCJE7Z85GlBMtgjeZleaMW7NJR9fhd0fZpOnzv0mZ60zb59x5R" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> شرح  مقدم من فريق دايموند شامل مادة الميد </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+        
+        
+        
+          <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/folders/1wirAfJnHd2d2A5a48YTNAygr3G1a4l2i?fbclid=IwZXh0bgNhZW0CMTAAAR3CgZuU9-CaiUwXu3OxS1auFL5vNf5bPhAoOrTjBHA8-Zyx7e0q5CwhshA_aem_ARU50ll7TOu0Di5SozyblFERaK3adCaPa59o061AEU7YB56zvrlitTgEkRKTVm7_rIxzN2EYMEb3RoOfuBAubCSE" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">شرح رهف الهامي </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+        
+        
+        
+          <div class="ag-courses_item">
+          <a href="https://www.mediafire.com/folder/j79g8x4ihs6wz/I.A?fbclid=IwZXh0bgNhZW0CMTAAAR2HpSVyPHC0agn8ZiVA-JW1TOZuLepj96bh8mriPXCGESxDe_m8FczC_hc_aem_ARVHIkxYXeKp5pLiMyUDpaSCu31ebFZyEnp7E4UVj51Hg49Kal91R-E8P7dbDN53INivGwzMNaV5xM4SmBqCFH9h" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> ⁩شرح قيام  </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">mediafire</div>
+            </div>
+          </a>
+        </div>
+        
+        
+           <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/u/0/folders/1-DA1DDRqe4kyoOJlEzbcZaTJuHsxa7V_?fbclid=IwZXh0bgNhZW0CMTAAAR1WpiDWAKKTXNhnGSwihpmt80cV3DubkYkGK7prABDvqXwNoNiadqlE4sE_aem_ARXMIV8s8BlPGBBb55KK-7juIN0VzaEo-2F6DJTCgvkabOc7wJnEUP4TweWaD1pW04kOpKJNS8lwnfUrRziys-IC" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> ⁩دفتر لدولات  </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+         
+         
+         
+          <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/u/0/folders/10-FR86ZzP1PnxHPIGoT78pbYcDo9EKhG?fbclid=IwZXh0bgNhZW0CMTAAAR17jkLHWX2UPQJ-JGd4V9nEbCbugc8k4W7BBhdyydf6VnkhJSXjHCcFyLw_aem_ARWxdRrUyh4YPwyLEp6TIKm4PfZfxomx4Dp0aqr1jpjV-m3x4CE7haygA9f8P8z3bXRJ_JoLbXkujNvPrPLibpTQ" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> نوتات الدكتور عماد جرادات للفيرست  </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+         
+         
+         
+          <div class="ag-courses_item">
+          <a href="https://drive.google.com/file/d/1B6O4gteZI4J9dsuusSaQBBQjKCGDCzsc/edit?fbclid=IwZXh0bgNhZW0CMTAAAR22_X4k-LAEYjfyt3-ry4BjMciZdHVOHPwk64GSNNN0zPsJtEntRCmEnok_aem_ARU_QnMBH-YFPQIkHEF46vkwCFTXle8QnQskOg48NLV9-B15AE9mM0UUwXNqwPKFPqv5fTrb8hFfkMtz8cdEYK8p" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> دفتر الدكتور عماد جرادات السكند   </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+         
+         
+          <div class="ag-courses_item">
+          <a href="https://drive.google.com/file/d/1Hq_y-EurQF0k_Q5mQphxhHTAyBzDQVL2/edit?fbclid=IwZXh0bgNhZW0CMTAAAR2Dqf4BN2X6kkqGgz6GcSxUuMePay7RYUJwLIzjK0BIjFgbzh2lpyfLIYc_aem_ARU45UhJQnOkUsrQeZiMSyAtGIYyxUo8NdZ_WvqhlGd3-BdB3VYnXDTaP6yCik3lGGCq2uAO_pbvOBHb7z7t5422" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> دفتر الدكتور عماد جرادات الفاينال  </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+         
+         
+          <div class="ag-courses_item">
+          <a href="https://www.mediafire.com/folder/08xobsxlmfyb9/Calculus?fbclid=IwZXh0bgNhZW0CMTAAAR0GAIcjXhcI2d_ulm9aG2S6FHuL324Pfx4iQlvxRMVeHCeIoUkwO-PsjQA_aem_ARXcMRz1LiSPRc0O9qS70m9clLisk8-xRpJQJV_HHVQJvSYNsMdY_5diLp-inedJtfjc_gBZvJZLA8mLM44-T1Hz" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> شرح المهندس معاذ العجلوني من لجنة الهندسة الميكانيكية  </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">mediafire</div>
+            </div>
+          </a>
+        </div>
+         
+         
+         
+         
+           
+      </div>
+      
+ <!------------------------------------------------------>
+ 
+      
+        <h2>QS & BAST YEARS</h2>
+        
+      <div class="ag-courses_box">
+        <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/folders/1W-43mL7hAEokl2EtTfxvI4YDnlXGY-pf?fbclid=IwZXh0bgNhZW0CMTAAAR1nXQzijr64jAg-bo4hLc-UoZvhLCcbkTC08SzkQ8NlrSMOlP3zwFNQv2M_aem_ARUJ4FrboN2pTmqeBMTxJp_Dly4yFqVGv43pEXtPylDYjLHygp2drCejTh3wVi7t170nhkg75hGzZnfW9v-pgvJT" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">سنوات للماده  </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+ 
+ 
+  
+        <div class="ag-courses_item">
+          <a href="https://www.mediafire.com/folder/vw1u23dut4glm/Past?fbclid=IwZXh0bgNhZW0CMTAAAR3HQYQJlPAWpq8NXol8nQeBzSxfVGKcNNtqdEAVKx8FQaz_6TuUNU-Lbzk_aem_ARUzB7ntLDFjDAnrQA4vwrfa7xcYriDxAPn5B3HMXL90F-d2jyWLOtXwI5gmLVlXmY1hHfKVwjfPn3nSQtszasH-" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> سنوات لجنة الهندسة الميكانيكية </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">mediafire</div>
+            </div>
+          </a>
+        </div>
+
+       
+    </div>
+  </div>
+  
+</body>
+</html>

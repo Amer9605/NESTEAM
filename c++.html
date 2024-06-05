@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C++ and C++ lap Course</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;300;400;700&display=swap" rel="stylesheet">
+  <style>
+    html {
+      --s: 50px;
+      --c: #191b22;
+      --_s: calc(2*var(--s)) calc(2*var(--s));
+      --_g: 35.36% 35.36% at;
+      --_c: #0000 66%,#20222a 68% 70%,#0000 72%;
+      background: 
+        radial-gradient(var(--_g) 100% 25%,var(--_c)) var(--s) var(--s)/var(--_s), 
+        radial-gradient(var(--_g) 0 75%,var(--_c)) var(--s) var(--s)/var(--_s), 
+        radial-gradient(var(--_g) 100% 25%,var(--_c)) 0 0/var(--_s), 
+        radial-gradient(var(--_g) 0 75%,var(--_c)) 0 0/var(--_s), 
+        repeating-conic-gradient(var(--c) 0 25%,#0000 0 50%) 0 0/var(--_s), 
+        radial-gradient(var(--_c)) 0 calc(var(--s)/2)/var(--s) var(--s) var(--c);
+      background-attachment: fixed;
+    }
+    body {
+      font-family: 'Fantasy', Fantasy;
+
+      background-color: transparent;
+      color: white;
+      padding: 20px;
+    }
+    .content {
+      max-width: 800px;
+      margin: auto;
+    }
+    .content h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .resources ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .ag-courses_box {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding: 50px 0;
+    }
+    .ag-courses_item {
+      flex-basis: calc(33.33333% - 30px);
+      margin: 0 15px 30px;
+      overflow: hidden;
+      border-radius: 28px;
+    }
+    .ag-courses-item_link {
+      display: block;
+      padding: 30px 20px;
+      background-color: #121212;
+      overflow: hidden;
+      position: relative;
+    }
+    .ag-courses-item_link:hover,
+    .ag-courses-item_link:hover .ag-courses-item_date {
+      text-decoration: none;
+      color: #FFF;
+    }
+    .ag-courses-item_link:hover .ag-courses-item_bg {
+      transform: scale(10);
+    }
+    .ag-courses-item_title {
+      min-height: 87px;
+      margin: 0 0 25px;
+      overflow: hidden;
+      font-weight: bold;
+      font-size: 20px;
+      color: #FFF;
+      z-index: 2;
+      position: relative;
+    }
+    .ag-courses-item_date-box {
+      font-size: 18px;
+      color: #FFF;
+      z-index: 2;
+      position: relative;
+    }
+    .ag-courses-item_date {
+      font-weight: bold;
+      color: #f9b234;
+      transition: color .5s ease;
+    }
+    .ag-courses-item_bg {
+      height: 128px;
+      width: 128px;
+      background-color: #f9b234;
+      z-index: 1;
+      position: absolute;
+      top: -75px;
+      right: -75px;
+      border-radius: 50%;
+      transition: all .5s ease;
+    }
+    .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
+      background-color: #3ecd5e;
+    }
+    .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
+      background-color: #e44002;
+    }
+    .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
+      background-color: #952aff;
+    }
+    .ag-courses_item:nth-child(5n) .ag-courses-item_bg {
+      background-color: #cd3e94;
+    }
+    .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
+      background-color: #4c49ea;
+    }
+
+    @media only screen and (max-width: 979px) {
+      .ag-courses_item {
+        flex-basis: calc(50% - 30px);
+      }
+      .ag-courses-item_title {
+        font-size: 24px;
+      }
+    }
+
+    @media only screen and (max-width: 767px) {
+      .ag-format-container {
+        width: 96%;
+      }
+    }
+
+    @media only screen and (max-width: 639px) {
+      .ag-courses_item {
+        flex-basis: 100%;
+      }
+      .ag-courses-item_title {
+        min-height: 72px;
+        line-height: 1;
+        font-size: 24px;
+      }
+      .ag-courses-item_link {
+        padding: 22px 40px;
+      }
+      .ag-courses-item_date-box {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>c++ and c++ lap Course</h1>
+    <p>Welcome to the c++ and c++ lap course. Here you will find various resources to help you learn c++ and c++ lap concepts.</p>
+    <div class="resources">
+    
+    <!------------------------------------------------------>
+    
+      <h2>INTRODUCTION</h2>
+      <div class="ag-courses_box">
+        <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/folders/1WnNutOIhMoV-_anDap31OjyyxUI_k6sI?fbclid=IwZXh0bgNhZW0CMTAAAR3lNDKIeFZE7R1rmHspEMMcf4Bq8B1NuNlD2ZVV9OWFrT5ZZQY3MZCa1mc_aem_AYYZ7o4kYOwN88mpn9Sp6lMqMlK6DD_GuIiIeFMKmOP3seDsTYK-XRy2ZM1X3P0jRf6LxwETy3Y9SnCC5IHHax_m" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">الكتاب + السلايدات</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">PDF</div>
+            </div>
+          </a>
+        </div>
+        <div class="ag-courses_item">
+          <a href="https://www.facebook.com/share/18t3o72WJtDYCTqG/" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">جروب المادة</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">facebook</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      
+      <!------------------------------------------------------>
+      
+      
+      <h2>VEDIOS</h2>
+      <div class="ag-courses_box">
+        <div class="ag-courses_item">
+          <a href="https://www.youtube.com/playlist?list=PLCInYL3l2AajFAiw4s1U4QbGszcQ-rAb3" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">فيديوهات عادل نسيم</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">youtube</div>
+            </div>
+          </a>
+        </div>
+        
+        
+        <div class="ag-courses_item">
+          <a href="https://www.youtube.com/playlist?list=PL0NUC7b1ZmpSy8ZXFONBCShyE2W0Rzo-m&fbclid=IwZXh0bgNhZW0CMTAAAR0OFrqSltzd34IYr5WXE_lCWCbcI9jvPqi3xo80GktfiE1D1bn2wzmUoF0_aem_AdoCbuu2Fg-T3TUBrX2wyxhy3Z0cwpo7kq15UzYPoyj_KpZHm0w8ZmIO8ZruacRgSjyHryVPHqIJ-AYyhyS68MT7" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">فيديوهات احمد فحماوي</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">youtube</div>
+            </div>
+          </a>
+        </div>
+              
+        <div class="ag-courses_item">
+          <a href="https://www.youtube.com/playlist?list=PLJzrJ6NUlRb8e5o0jGe8yHYGy2Mu17Eeg" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">فيديوهات محمد الدسوقي</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">youtube</div>
+            </div>
+          </a>
+        </div>
+              
+        <div class="ag-courses_item">
+          <a href="https://www.youtube.com/playlist?list=PLPn4eVPZKtrLHJA-DyDITHk-yXOrNPwp2" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">فيديوهات smart team</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">youtube</div>
+            </div>
+          </a>
+        </div>
+        
+          <div class="ag-courses_item">
+          <a href="https://www.youtube.com/playlist?list=PLaM9iI2_YB7W6Zw6vqr8s2XgTL-hAlD-X" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">فيديوهات احلام</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">youtube</div>
+            </div>
+          </a>
+        </div>
+    
+      
+       <div class="ag-courses_item">
+          <a href="https://youtube.com/playlist?list=PL9vv0h_aJCACfsbvyNAel7OdenlGnXbsc&si=gtePxTFpDZE77oAi" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">فيديوهات ضياء المعالي</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">youtube</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      
+      
+      <!------------------------------------------------------>
+      
+       
+      <h2>PDF'S</h2>
+      <div class="ag-courses_box">
+        <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/folders/1WnNutOIhMoV-_anDap31OjyyxUI_k6sI?fbclid=IwZXh0bgNhZW0CMTAAAR3lNDKIeFZE7R1rmHspEMMcf4Bq8B1NuNlD2ZVV9OWFrT5ZZQY3MZCa1mc_aem_AYYZ7o4kYOwN88mpn9Sp6lMqMlK6DD_GuIiIeFMKmOP3seDsTYK-XRy2ZM1X3P0jRf6LxwETy3Y9SnCC5IHHax_m" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">  ++C أفضل دوسية</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+        
+       
+        
+        <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/u/0/folders/1y6VnFpoEdCyeOEje5TfOUuxpNZMmRED9?fbclid=IwZXh0bgNhZW0CMTAAAR11FL8lTE6V7_WpZCuETT4ObkdJTAG4qcWn7Uum5L_jGnLnnGLIiHhsi68_aem_AdrxNRS6lDh7OJ5H-mQ956r2-f0hvatP6KE2N2bbI-1TL9Cbu8UimzaKZMJIQuB-UC5wlaJ50klTCWQlh6B2II4d" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">ملفات الدكتورة غدير عبيدات</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+      
+       <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/folders/1h1_T42YHyCQZx6P4_tURJ4e88zr_NxC9?fbclid=IwZXh0bgNhZW0CMTAAAR1remQw7-jIzT_H9Kk6xrEaT0yf3KmnyBm6ibeiefxnwX9_lShX88tX98Q_aem_AcRTVcHbBd4ZSUvB1gxA6ta-VYhLbPz44qyEVwmydMm7K_kM29dzcaQNnfHmAx5AiAdvJTwBVH0T9lV-ghVhYrk9" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">شرح المهندس محمد المشرقي</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+              
+        
+        <div class="ag-courses_item">
+          <a href="https://drive.google.com/file/d/18V7FXH0Qo8cg2BlXBlz7CYCX2718B3mC/view?fbclid=IwZXh0bgNhZW0CMTAAAR06AROC4IUjrtrgNt8pk78Yoyh5bM0JX4HpWsvhIARHjtspJR9QBnNikag_aem_AcTiNI1wWe0zuNq1PnOcsgU1nCrQ3pHy3tdvEQtZ-o4MtSVCcayZEPMYqfS_bD8hkrPwDWiX-yFyqy4fmczFudzh" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> دوسية نيس لشابتر 1</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+      
+      <div class="ag-courses_item">
+          <a href="https://drive.google.com/file/d/1bDCY1vpRMNr7IOC35XkP0zgJ3eBTIH8x/view?fbclid=IwZXh0bgNhZW0CMTAAAR0p9Fg5viZCB6YVDcWjnzSJatrZpFOtH3JZq8V963eXwKOVViJuHVdcbmg_aem_AcQNA0wIBDn-Dqx7xS9urlI820HmHW8LLOtIn56ELRhNYfkPAHPUXB7D98DkmsdK1llZyfytrh_AU6neLNUZhNA_" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> دوسية نيس لشابتر 2</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+              
+        
+        <div class="ag-courses_item">
+          <a href="https://drive.google.com/file/d/1pDhQ-m1NGuMZja0uAvxOUrWqjlJP3rv5/view?fbclid=IwZXh0bgNhZW0CMTAAAR2Mr4HZZJPFatvlFYusmFmScPhMZsEYUEi4s8xqtu5YdkGZNMNTfcOZ9jE_aem_AdoNS6KPxZ318n3oW95wYseE8ZnzbHQIJfkNYuhqTBcXKDoTbaWPd6Ykw28R3dkErQznNExfGArgA6sD-VO6yEPv" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> Functionsتلخيص لل </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+        
+        
+        <div class="ag-courses_item">
+          <a href="https://www.dropbox.com/sh/w8oagdl66owgpl0/AABwZ5h-Xn432VRr6wc8TnwSa/%D8%A7%D9%86%D9%81%D9%8A%D9%86%D9%8A%D8%AA%D9%8A%202018?e=1&fbclid=IwZXh0bgNhZW0CMTAAAR115-FNwMqOHjlVToHezpEwWbf2iMLsUMvFEXWSpRb0VXyw8DScRCjvoNY_aem_AcRognpPIyMjpYav2oooV0ino5Usomsx4bsPfFO2kBrmmofYJY85wgR25D3K5w3t6fwzPraQ7b9WWnx6NQvCtkD9&preview=infinity+2018.pdf&subfolder_nav_tracking=1&dl=0" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> دوسية انفينيتي </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">dropbox</div>
+            </div>
+          </a>
+        </div>
+        
+        
+                
+        
+        <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/folders/1eJD7Ok7W66Q6Wkv3RFHN5gXx9OJTPrHD?fbclid=IwZXh0bgNhZW0CMTAAAR2iUGglTtm9DuyZXAJ7FvFHBT7SxITnNdh6-ZEMAf8Fs_8BWdqq0OUP1DE_aem_AdoLcElcqFYowBIlR1OzlCyya3unyCVSbwTSsbm5UL61sP08PzelDvvq4qa08L2Fb6EfIdzsQr7v579vCAJRzJud" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">ملخصات اخرى</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">PDF</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      
+ <!------------------------------------------------------>
+ 
+      
+        <h2>QS & BAST YEARS</h2>
+        
+      <div class="ag-courses_box">
+        <div class="ag-courses_item">
+          <a href="https://www.w3resource.com/cpp-exercises/array/index.php?fbclid=IwZXh0bgNhZW0CMTAAAR3CWrNUGMISIJlgcFA0UuKpu6O8RTbT9XvI8t0N6RzM_nSFot01G6OOY9o_aem_AdoV3aU-PleDAPqcANvETvS_iMOyX3zA5TuuLfDIwxJutVoZLaZuJlLoenUmEv6_asFXwbc9Nk-PxOxoXe6uYCYz" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">رابط اسئلة تدريب للحل</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">w3resource</div>
+            </div>
+          </a>
+        </div>
+        
+        <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/folders/1ZKPqsTM_p2fF-a4kxPtft4Hc8yOLv9cL?fbclid=IwZXh0bgNhZW0CMTAAAR1SqAXnDN4DK0X-QD8yWDfYaiFUk-GrTaqEN8S07oVGsYIYJk2rDGakWMY_aem_Adoibh1gDfbViYKOcCeeNKrsjOJyOHrWVitsZyRYl-1VPZZZPqXPcL8QXDxeEWLvEDJae0ncmferWNSLNp6BA5tb" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">اسئلة للتدريب</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+        
+        
+           <div class="ag-courses_item">
+          <a href="https://docs.google.com/forms/d/1G6YEGQT7_xC9ZqRg7GISjkKJV2Cx9AsIHLrVKnIq9G4/viewform?fbclid=IwZXh0bgNhZW0CMTAAAR3CWrNUGMISIJlgcFA0UuKpu6O8RTbT9XvI8t0N6RzM_nSFot01G6OOY9o_aem_AdoV3aU-PleDAPqcANvETvS_iMOyX3zA5TuuLfDIwxJutVoZLaZuJlLoenUmEv6_asFXwbc9Nk-PxOxoXe6uYCYz&edit_requested=true" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">كويز  في شابتر الحفظ </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">docs</div>
+            </div>
+          </a>
+        </div>
+        
+        
+         <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/u/0/folders/11hDNo3h0brKpp3NYxLTW4rgtKowiRecm?fbclid=IwZXh0bgNhZW0CMTAAAR1pLJDnCD2nz0DayMrZw_vXrdZ6wncoKOd-gw9MLSQOe8mrej9Kj9503UA_aem_AdonZv4c_mMweI5CRvvZZBaj7e4BFOdwjiiOdggGBLynhn5gJn8yhbDP2VTdjCTvqrv5Mm_Mu4AenhQoTtqzBJZr" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> سنوات</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+      
+      
+       <div class="ag-courses_item">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1ILIvusA8ncZwgQRybbojPoGlM4477qMtEPIz5uxmrUlheg/viewform?fbclid=IwZXh0bgNhZW0CMTAAAR3gnAsI8pyWtmZ8LMoBq0bbuKRNEdZmw15w4g90rNYCRD2bt17oXYSMSxU_aem_AcQTbaQOIz70XToRN4sfeDqk38M2VMsicU37Lm-gBtHssZgqC_O_JNeyzxUfmQIqPYjTO4ZgY_RMWVtvO82EMt45" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title">كويز شابتر  0 </div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+        
+        
+           <div class="ag-courses_item">
+          <a href="https://drive.google.com/drive/folders/1kupcWrBK7bhGOpAlRmbK6ORJIpRLIQWH?fbclid=IwZXh0bgNhZW0CMTAAAR0p9Fg5viZCB6YVDcWjnzSJatrZpFOtH3JZq8V963eXwKOVViJuHVdcbmg_aem_AcQNA0wIBDn-Dqx7xS9urlI820HmHW8LLOtIn56ELRhNYfkPAHPUXB7D98DkmsdK1llZyfytrh_AU6neLNUZhNA_"class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> QUIZS</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">drive</div>
+            </div>
+          </a>
+        </div>
+      </div>
+        <!------------------------------------------------------>
+    
+      <h2> C++ Lab material </h2>
+         <div class="ag-courses_box">
+        <div class="ag-courses_item">
+          <a href="https://docs.google.com/document/d/1Y8K49IBNoOufo-cxrlUz5j3IlY9Q_iQPzrdvQtBbF3o/edit?fbclid=IwZXh0bgNhZW0CMTAAAR1utxFQ9fY3_CNbScZAZ9vupGiIxcvyddXOIW2Xiw1KIGWID3gHBK43qc4_aem_AdpcEgRE-01x1id458YXP-MFk5lQviNN2OtMRneYucwm0S4fGq7tLwPQooDmhYdwEycomkiQXNYrDHp82KtyWWtf" target="_blank" class="ag-courses-item_link">
+            <div class="ag-courses-item_bg"></div>
+            <div class="ag-courses-item_title"> كل اللابات و الامتحانات التي مرت علينا من فصول سابقة</div>
+            <div class="ag-courses-item_date-box">
+              <div class="ag-courses-item_date">docs</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+  
+</body>
+</html>
