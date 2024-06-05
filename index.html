@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NES Library</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200" rel="stylesheet">
+  <style>
+    * {
+      padding: 0;
+      margin: -1;
+      box-sizing: border-box;
+    }
+
+  body {
+  background-image: url('658810.jpg');
+  background-size: cover;
+  -webkit-animation: slidein 100s;
+  animation: slidein 100s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+}
+
+@-webkit-keyframes slidein {
+  from { background-position: top; background-size: 100%; }
+  to { background-position: top; background-size: 150%; }
+}
+
+@keyframes slidein {
+  from { background-position: top; background-size: 100%; }
+  to { background-position: top; background-size: 150%; }
+}
+
+
+    .navbar-brand {
+      color: black !important;
+    }
+
+     .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      width: 300px;
+      margin: 20px;
+      height: 400px;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+    }
+
+    .card-body {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .card-title {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      color: #555;
+      font-size: 1em;
+      line-height: 1.5;
+    }
+
+    .card-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1em;
+      transition: background-color 0.2s;
+    }
+
+    .card-button:hover {
+      background-color: #0056b3;
+    }
+
+    .footer {
+      background: #f7f7f7;
+      padding: 3rem;
+      padding-top: 7rem;
+      padding-bottom: 80px;
+      background-image: url(https://arena.km.ua/wp-content/uploads/3538533.jpg);
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .text-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 5px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      color: black;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: normal;
+      width: 100%;
+      text-align: center;
+      font-size: 16vw;
+      background: linear-gradient(
+        -45deg, 
+        #FFFFFF 25%, 
+        #B9F2FF 25%, 
+        #FFFFFF 50%, 
+        #FFFFFF 50%, 
+        #B9F2FF 75%, 
+        #B9F2FF 75%, 
+        #B9F2FF
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 20px 20px;
+      background-position: 0 0;
+      animation: stripes 1s linear infinite; /* Adjusted animation timing */
+      }
+
+    @keyframes stripes {
+      100% { 
+        background-position: 20px 0, 20px 0, 20px 0;
+      }
+    }
+
+    /* Styles for the header section */
+    header {
+     
+      text-align: center;
+      width: 100%;
+      height: auto;
+      background-size: cover;
+      background-attachment: fixed;
+      position: relative;
+      
+      border-radius: 0 0 85% 85% / 30%;
+    }
+
+    header .overlay {
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      color: red;
+      text-shadow: 2px 2px 3px #87CEEB;
+      background-image: url ('https://www.just.edu.jo/aboutjust/Gallery/just-k%20%20(22).JPG');
+    
+    }
+
+    .shine-text {
+      font-weight: 900;
+      text-align: center;
+      font-size: 100px;
+      font-family: sans-serif;
+      text-transform: uppercase;
+      background: black ;
+      letter-spacing: 5px;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-repeat: no-repeat;
+      background-size: 70%;
+      animation: shine 1s linear infinite;
+      position: relative;
+      
+    }
+
+    @keyframes shine {
+      0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+    }
+
+    h3, p {
+      font-family: 'Open Sans', sans-serif;
+      margin-bottom: 2px;
+      color: #B9F2FF;
+      padding: 4px;
+     
+    }
+
+     .button {
+      position: relative;
+      padding: 10px 10px;
+      font-size: 1.5rem;
+      color: var(--color);
+      border: 2px solid rgba(0, 0, 0, 0.5);
+      border-radius: 4px;
+      text-shadow: 0 0 15px var(--color);
+      text-decoration-color: #;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      transition: 0.5s;
+      z-index: 1;
+      margin: 0 10px;
+      
+    }
+
+    .button:hover {
+      color: #fff;
+      border: 2px solid rgba(0, 0, 0, 0);
+      box-shadow: 0 0 0px var(--color);
+    }
+
+    .button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--color);
+      z-index: -1;
+      transform: scale(0);
+      transition: 1s;
+    }
+
+    .button:hover::before {
+      transform: scale(1);
+      transition-delay: 0.5s;
+      box-shadow: 0 0 10px var(--color),
+        0 0 30px var(--color),
+        0 0 60px var(--color);
+    }
+
+    .button span {
+      position: absolute;
+      background: var(--color);
+      pointer-events: none;
+      border-radius: 2px;
+      box-shadow: 0 0 10px var(--color),
+        0 0 20px var(--color),
+        0 0 30px var(--color),
+        0 0 50px var(--color),
+        0 0 100px var(--color);
+      transition: 0.5s ease-in-out;
+      transition-delay: 0.25s;
+    }
+
+    .button span:nth-child(1) {
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 0;
+      transform: translateX(-50%);
+    }
+
+    .button:hover span:nth-child(1) {
+      height: 100%;
+    }
+
+    .button span:nth-child(2) {
+      top: 50%;
+      right: 0;
+      width: 0;
+      height: 2px;
+      transform: translateY(-50%);
+    }
+
+    .button:hover span:nth-child(2) {
+      width: 100%;
+    }
+
+    .button span:nth-child(3) {
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      height: 0;
+      transform: translateX(-50%);
+    }
+
+    .button:hover span:nth-child(3) {
+      height: 100%;
+    }
+
+    .button span:nth-child(4) {
+      top: 50%;
+      left: 0;
+      width: 0;
+      height: 2px;
+      transform: translateY(-50%);
+    }
+
+    .button:hover span:nth-child(4) {
+      width: 100%;
+    }
+
+    .button-gold {
+      --color: #FFD700;
+    }
+
+    .button-blue {
+      --color: #00BFFF;
+    }
+    .gold-border {
+      border: 2px solid gold; /* Set the border width and color */
+      border-radius: 10px; /* Add border radius for rounded corners */
+    }
+
+    .footer-text {
+      background: linear-gradient(to right, #000, #333); /* Set the background gradient */
+      -webkit-background-clip: text; /* Clip the text to the background */
+      color: transparent; /* Make the text transparent */
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6); /* Add black shadow */
+    }
+
+    /* Custom styles for the welcome text */
+    @use postcss-preset-env {
+      stage: 1;
+    }
+
+    .welcome-text {
+      --font-size: 5vmin; /* Adjusted font size */
+      --font-weight: 600;
+      --letter-spacing: calc(1em / 100);
+      box-sizing: border-box;
+      display: grid;
+      font-family: Poppins, sans-serif;
+      margin: 0;
+      min-block-size: 1vh;
+      place-items: center;
+      padding: 20vmin;
+    }
+
+    .welcome-text h1 {
+      background-clip: text;
+      background-image: linear-gradient(to right,  #B9F2FF, #B9F2FF, #B9F2FF, #0000);
+      color: transparent;
+      font-size: var(--font-size);
+      font-weight: var(--font-weight);
+      letter-spacing: var(--letter-spacing);
+      padding: calc(--stroke-width / 23);
+      -webkit-text-stroke-color: transparent;
+      -webkit-text-stroke-width: var(--stroke-width);
+    }
+
+   .welcome-text p {
+  font-size: 3vmin; /* Smaller font size for the paragraph */
+  color: #ffffff; /* Adjusted text color for better readability */
+  background-color: #D4AF37; /* Sky blue background color */
+  padding: 10px; /* Padding inside the box */
+  border-radius: 10px; /* Optional: Rounded corners */
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+
+    .map-container {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .map-container iframe {
+      border: none;
+      width: 100%;
+      height: 500px;
+    }
+    
+  
+
+:root {
+  --gold: #b9f2ff ;
+  --light-shadow: #b9f2ff;
+  --dark-shadow: #3e2904;
+  
+}
+
+.wrapper {
+  
+  display: grid;
+  grid-template-areas: 'overlap';
+  place-content: center;
+  text-transform: uppercase;
+  height: 50vh;
+  font size : font-size: 100px;
+}
+.wrapper > div {
+  background-clip: text;  
+  -webkit-background-clip: text;
+  color: #363833;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 1000;
+  font-size: clamp( 2em, 10vw, 10rem);
+  grid-area: overlap;	
+  letter-spacing: 1px;
+  -webkit-text-stroke: 4px transparent;
+  
+}
+div.bg {
+  background-image: repeating-linear-gradient( 105deg, 
+    var(--gold) 0% , 
+    var(--dark-shadow) 5%,
+    var(--gold) 12%);
+  color: transparent;
+  filter: drop-shadow(5px 15px 15px black);
+  transform: scaleY(1.05);
+  transform-origin: top;
+  
+}
+div.fg{
+  background-image: repeating-linear-gradient( 5deg,  
+    var(--gold) 0% , 
+    var(--light-shadow) 23%, 
+    var(--gold) 31%);
+  color: #1e2127;
+  transform: scale(1);
+  
+}
+   
+    
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#" onclick="location.reload()" >NES Library</a>
+  </nav>
+
+  <!-- Header Section -->
+  <header>
+    <div class="overlay">
+       <div class="wrapper">
+  <div class="bg"> NES </div>
+  <div class="fg"> NES  </div>
+</div>
+      <h3 >We provide the best educational resources</h3>
+      <p>Explore courses and enhance your knowledge</p>
+      <button onclick="showSection('courses')" class="button button-blue" role="button" >📚 Explore Courses 📚 </button>
+      <br></br>
+      <button onclick="window.location.href='https://www.just.edu.jo/ar/FacultiesandDepartments/it/Pages/viewplan.aspx?planno=565'" class="button button-blue" role="button">📋 Study Plan 2021 📋 </button> 
+      
+      <button onclick="window.location.href='https://drive.google.com/file/d/1OFL0xZu9XLqow9gAVup8E5_DXhd5r5Qq/view?fbclid=IwZXh0bgNhZW0CMTAAAR2akp1xWQ-J-qSIsH6VJKPeMaSRts2OEbzEBjku7zGJDpGL4jwiCBB3zvI_aem_ATxZXwjvlm4aJGLd60qrDUNBY7hAC3QsWyK3HtVOWy3toMKF8vCBhFXgOEdToF9LVLGof7b3wnQZWzj2z3bJd6xc'" class="button button-blue" role="button">🌴 Tree Plan 2021 🌴</button> <br></br>
+      
+    
+      
+    </div>
+    
+    
+  </header>
+
+  <!-- NES Team Section -->
+  <div id="team" class="container mt-5 section active">
+    <div class="welcome-text">
+      <h1>Welcome to NES Library</h1>
+      <p>We are NES Team, dedicated to providing the best educational resources in network engineering and security field in just university to help you succeed. Our team is passionate about learning and teaching, and we strive to bring you the most comprehensive and up-to-date materials available </p>
+      <!-- Map Button Section -->
+      <div class="text-center mt-4">
+      <button onclick="window.location.href='https://www.just.edu.jo/aboutjust/map/Pages/default.aspx'" class="button button-gold " role="button">🗺️ JUST MAP 🗺️ </button>
+
+      </div>
+    </div>
+    <div class="text-center">
+      <div class="logo">NES</div>
+    </div>
+  </div>
+
+  <!-- Courses Section -->
+  <div id="courses" class="container mt-5 section">
+    <div class="wrapper">
+  <div class="bg"> courses </div>
+  <div class="fg"> courses  </div>
+</div>
+    <!-- Search bar -->
+    <div class="row mb-3"  >
+
+      <div class="col">
+        <input type="text" id="courseSearch" class="form-control" style="box-shadow: #b9f2ff 0px 54px 55px, #b9f2ff  0px -12px 30px, #b9f2ff 0px 4px 6px, #b9f2ff 0px 12px 13px, #b9f2ff 0px -3px 5px; color="black " placeholder="Search for courses...">
+      </div>
+    </div>
+    <div class="row" id="courseCards">
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-Yallow text-center py-3 footer">
+    <span class="footer-text">&copy; 2024 NES Library. All rights reserved. Designed by Amer Alghanem</span>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      // Show the selected section
+      document.getElementById(sectionId).classList.add('active');
+    }
+
+    // Function to filter courses based on search input
+    function filterCourses() {
+      const searchTerm = document.getElementById('courseSearch').value.toLowerCase();
+      const filteredCourses = courseData.filter(course => course.name.toLowerCase().includes(searchTerm));
+      displayCourses(filteredCourses);
+    }
+
+    // Function to display courses
+    function displayCourses(courses) {
+      const courseCardsContainer = document.getElementById('courseCards');
+      let content = '';
+      courses.forEach(course => {
+        content += `
+          <div class="col-md-4">
+            <div class="card gold-border"> <!-- Apply the gold-border class -->
+              <img src="${course.imageURL}" class="card-img-top" alt="${course.name}">
+              <div class="card-body">
+                <h5 class="card-title">${course.name}</h5>
+               <button onclick="window.location.href='${course.linkURL}'" class="button button-blue">Go to course</button>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      courseCardsContainer.innerHTML = content;
+    }
+ const courseData = [
+      {
+        name: 'c++ and c++ lap',
+        imageURL: 'https://c4.wallpaperflare.com/wallpaper/926/492/891/code-c-c-plus-plus-wallpaper-preview.jpg',
+        linkURL: 'c++.html' <!-- Updated link URL -->
+      },
+      
+      
+       {
+        name: 'Ethics',
+        imageURL: 'https://www.uib.no/sites/w3.uib.no/files/styles/content_main_wide_1x/public/w2/et/ethics_word_cloud.jpg?itok=_pJVMbJu&timestamp=1579189500',
+        linkURL: 'Ethics.html' <!-- Updated link URL -->
+      },
+      
+       {
+        name: 'Calculas 101',
+        imageURL: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1Vd9TdMZs4z6Um7jRpEJZgb8NdkP4V_rzc5GqYDIaYRDEkDpN7pbAz9vg3EzjRUtu5aicb49prdaYnXYB1Ji5MDFtaE5odqLIrMNs-Tj_HnpTk4pYMOaCjlAIAH0nsP3VmE0Eu_FbyLbS/s1600/Calculus.jpg',
+        linkURL: 'Calculas1.html' <!-- Updated link URL -->
+      },
+      
+       {
+        name: 'Physics 101',
+        imageURL: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEirpz5flcEOQNQPivoncPT8DrfXt_vWIsA1kvMNP38YFxDHmYAgvsstLGR383S_3Fov1J_NIjor5caCeWlnaGTfM_3ss117Pc9ouCNVvfhPCKlqgc7LJgD6nCJIETfCSMbRFFte5pxqJpWj/s640/Physics+101+DVD+Review.JPG',
+        linkURL: 'ph1.html' <!-- Updated link URL -->
+      },
+      
+       {
+        name: 'Chemistry 103',
+        imageURL: 'https://chemistryfinalexam.weebly.com/uploads/2/4/2/6/24263862/476326610.jpg',
+        linkURL: 'che.html' <!-- Updated link URL -->
+      },
+      
+        {
+        name: 'OBJECT- ORIENTED PROG & oop lap ',
+        imageURL: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh4Z9YC9SC6ZQedm3TnmnZrooKSm3a6ecwm_1g6mvbh9PEtw6_vc1AcYFO7sRmyxfCwqjNL4sGbtpWv-XXoTG6zYcKo9v_mkkJQCl-F57Jb7-i8mjBAhYqxnCJIgc-hQTyrw9b1dq07eA8/w640-h320-rw/images.jpg',
+        linkURL: 'obj.html' <!-- Updated link URL -->
+      },
+      
+       {
+        name: 'Calculas2 ',
+        imageURL: 'https://static.wixstatic.com/media/eab683_d7a4769f25f049df8c2b230efaa6928b~mv2.jpg/v1/fill/w_925,h_740,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/eab683_d7a4769f25f049df8c2b230efaa6928b~mv2.jpg',
+        linkURL: 'Calculas2.html' <!-- Updated link URL -->
+      },
+      
+        {
+        name: 'Physics 102',
+        imageURL: 'https://he.kendallhunt.com/sites/default/files/9781465227898.jpg',
+        linkURL: 'ph2.html' <!-- Updated link URL -->
+      }, 
+      
+       {
+        name: 'DISCRETE',
+        imageURL: 'https://image.slidesharecdn.com/discretemathematicspresentationfinal-221007180625-61c6c8a4/85/discrete-mathematics-presentation-finalpptx-1-320.jpg?cb=1667561897',
+        linkURL: 'disc.html' <!-- Updated link URL -->
+      }, 
+      
+       {
+        name: 'Digital',
+        imageURL: 'https://www.csoonline.com/wp-content/uploads/2023/06/future-human-technology-the-digital-age-thinking-and-technological-picture-id913645450-100851538-orig.jpg?resize=1024%2C683&quality=50&strip=all',
+        linkURL: 'degi.html' <!-- Updated link URL -->
+      }, 
+      
+      {
+        name: 'Circuit (سيركت)',
+        imageURL: 'https://m.media-amazon.com/images/I/71FLT0Xf17L._SY466_.jpg',
+        linkURL: 'Circuit.html' <!-- Updated link URL -->
+      }, 
+      
+      
+      {
+        name: 'AUTOCAD',
+        imageURL: 'https://drawings.archicgi.com/wp-content/uploads/2020/03/autocad-drawing-top-features-view-main.png',
+        linkURL: 'cad.html' <!-- Updated link URL -->
+      }, 
+      
+    
+      {
+        name: 'PHYSICS LAB',
+        imageURL: 'https://www.my-tutor.com/wordpress/wp-content/uploads/2017/07/physics-e1499900879366-768x437.jpg',
+        linkURL: 'phylap.html' <!-- Updated link URL -->
+      }, 
+      
+      
+      {
+        name: 'MATH INTERMEDIATE ANALYSIS (تحليل وسيط)',
+        imageURL: 'https://i.thenile.io/r1000/9780486462974.jpg?r=5f6abc8891848',
+        linkURL: 'MIA.html' <!-- Updated link URL -->
+      }, 
+      
+
+      {
+        name: 'MATH  DIFFERENTIAL EQUATIONS (ديف)',
+        imageURL: 'https://th.bing.com/th/id/OIP.QQO-Cmk3gXwEUNrH33xLYAAAAA?rs=1&pid=ImgDetMain',
+        linkURL: 'diff.html' <!-- Updated link URL -->
+      }, 
+      
+      {
+        name: ' Digital Logic Design Lab',
+        imageURL: 'https://th.bing.com/th/id/OIP.1KGSJHcIXp5SUtTfJ6VpTwAAAA?rs=1&pid=ImgDetMain',
+        linkURL: 'digilap.html' <!-- Updated link URL -->
+      },
+       
+      {
+        name: '  COMPUTER ORGANIZ AND DESIGN ',
+        imageURL: 'https://image3.slideserve.com/7013027/common-bus-system1-l.jpg',
+        linkURL: 'orga.html' <!-- Updated link URL -->
+      }, 
+      
+      {
+        name: '  INTRODUCTION TO WEB DESIGN ',
+        imageURL: 'https://th.bing.com/th/id/OIP.pAGmGWwNTbEjAvFoTtXUAAHaE8?rs=1&pid=ImgDetMain',
+        linkURL: 'web.html' <!-- Updated link URL -->
+      }, 
+      
+      {
+        name: '  INTRODUCTION TO LINEAR SYSTEMS (لينير)',
+        imageURL: 'https://cdn.vectorstock.com/i/1000v/40/99/matrix-mathematics-concept-flat-icon-vector-20664099.avif',
+        linkURL: 'lin.html' <!-- Updated link URL -->
+      }, 
+      
+      {
+        name: '  ELECTRICAL CIRCUITS LAB (لاب سيركت)',
+        imageURL: 'https://siglentna.com/wp-content/uploads/2018/05/DSC_4937666.png',
+        linkURL: 'circlab.html' <!-- Updated link URL -->
+      }, 
+      
+      {
+        name: '  ENGINEERING MECHANICS (ميكانيكا)',
+        imageURL: 'https://th.bing.com/th/id/OIP.uGrBJc6uIpFsRgUecOT-yQHaE7?rs=1&pid=ImgDetMain',
+        linkURL: 'mecan.html' <!-- Updated link URL -->
+      }, 
+      
+       {
+        name: '  DATA STRUCTURES (داتا ستركشر)',
+        imageURL: 'https://www.techyloud.com/wp-content/uploads/2022/02/Data-Structure-assignement.jpg',
+        linkURL: 'datas.html' <!-- Updated link URL -->
+      }, 
+      
+      
+       {
+        name: '  MICROPROCESSOR SYSTEMS (مايكرو)',
+        imageURL: 'https://predictabledesigns.com/wp-content/uploads/2018/01/HeroImage2.jpg',
+        linkURL: 'micro.html' <!-- Updated link URL -->
+      }, 
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      // Add more course objects as needed
+    ];
+      
+    // Initialize course display on page load
+    displayCourses(courseData);
+
+    // Event listener for search input
+    document.getElementById('courseSearch').addEventListener('input', filterCourses);
+  </script>
+</body>
+</html>
