@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROGRAMMING</title>
+    <style>
+    :root {
+    --direction: -45deg;
+    --gold: #b9f2ff;
+    --light-shadow: #b9f2ff;
+    --dark-shadow: silver; /* Change the dark-shadow variable to silver */
+}
+ body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: linear-gradient(45deg, rgba(135,206,235,1) 0%, rgba(135,206,235,1) 50%, rgba(192,192,192,0.02) 50%, rgba(192,192,192,0.02) 100%);
+    }
+
+
+main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+}
+
+.background, .foreground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.background {
+    background-image: url('https://th.bing.com/th/id/R.23bdd7bd1cab3d0007248f620758202e?rik=JjS18BGxlCDfuw&pid=ImgRaw&r=0');
+}
+
+.foreground {
+    background-image: url('https://th.bing.com/th/id/OIP.Y-ApCwW-aOrYsnjSriX36AHaHa?rs=1&pid=ImgDetMain');
+    mask-image: linear-gradient(var(--direction), rgba(0,0,0,1) 40%, rgba(0,0,0,0) 60%);
+    mask-position: 50% 50%;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .background, .foreground {
+        background-size: cover; /* Ensures the background covers the entire area */
+        background-position: center; /* Centers the background */
+    }
+}
+
+/* Smartphones */
+@media (max-width: 768px) {
+    .background, .foreground {
+        background-size: cover; /* Ensures the background covers the entire area */
+        background-position: center; /* Centers the background */
+    }
+}
+
+
+        header .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Optional overlay */
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-areas: 'overlap';
+            place-content: center;
+            text-transform: uppercase;
+            height: 50vh;
+        }
+
+        .wrapper > div {
+            background-clip: text;  
+            -webkit-background-clip: text;
+            color: #363833;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 1000;
+            font-size: clamp(2em, 10vw, 10rem);
+            grid-area: overlap;    
+            letter-spacing: 1px;
+            -webkit-text-stroke: 4px transparent;
+        }
+
+        div.bg {
+            background-image: repeating-linear-gradient(105deg, var(--gold) 0%, var(--dark-shadow) 5%, var(--gold) 12%);
+            color: transparent;
+            filter: drop-shadow(5px 15px 15px black);
+            transform: scaleY(1.05);
+            transform-origin: top;
+        }
+
+        div.fg {
+            background-image: repeating-linear-gradient(5deg, var(--gold) 0%, var(--light-shadow) 23%, var(--gold) 31%);
+            color: #1e2127;
+            transform: scale(1);
+        }
+
+        h4{
+            font-family: 'Open Sans', sans-serif;
+            margin-bottom: 2px;
+            color: #ffffff;
+            padding: 4px;
+            text-align: center;
+             
+              
+        }
+        
+  p {
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 2px;
+    color: #ffffffff; /* Dark blue text color */
+    padding: 2px;
+    text-align: center;
+    font-weight: bold; /* Making the text bold */
+    text-shadow: 2px 2px 4px #C0C0C0; /* Adding a silver shadow */
+}
+
+
+        .container {
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(17, 25, 40, 0.25);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.125);  
+            padding: 6px;  
+            filter: drop-shadow(0 30px 10px rgba(0,0,0,0.125));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .container .wrapper {
+            width: 60%;
+            height: 70%;
+        }
+         
+      
+        
+
+        h1 {
+            font-family: 'Righteous', sans-serif;
+            color: rgba(255,255,255,0.98);
+            text-transform: uppercase;
+            font-size: 2.4rem;
+           
+        }
+
+
+     .button {
+      position: relative;
+       padding: 10px 20px;
+       font-size: 16px;
+      color: var(--color);
+      border: 2px solid rgba(1, 2, 3, 0.5);
+      border-radius: 4px;
+      text-shadow: 0 0 15px var(--color);
+      text-decoration-color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.1rem;
+      transition: 0.5s;
+      z-index: 1;
+      margin: 0 10px;
+      
+    }
+
+    .button:hover {
+      color: #fff;
+      border: 2px solid rgba(0, 0, 0, 0);
+      box-shadow: 0 0 0px var(--color);
+    }
+
+    .button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--color);
+      z-index: -1;
+      transform: scale(0);
+      transition: 1s;
+    }
+
+    .button:hover::before {
+     transform: scale(1);
+      transition-delay: 0.5s;
+      box-shadow: 0 0 10px var(--color),
+        0 0 30px var(--color),
+        0 0 60px var(--color);
+    }
+
+    .button span {
+      position: absolute;
+      background: var(--color);
+      pointer-events: none;
+      border-radius: 2px;
+      box-shadow: 0 0 10px var(--color),
+        0 0 20px var(--color),
+        0 0 30px var(--color),
+        0 0 50px var(--color),
+        0 0 100px var(--color);
+      transition: 0.5s ease-in-out;
+      transition-delay: 0.25s;
+    }
+
+    .button span:nth-child(1) {
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 0;
+      transform: translateX(-50%);
+    }
+
+    .button:hover span:nth-child(1) {
+      height: 100%;
+    }
+
+    .button span:nth-child(2) {
+      top: 50%;
+      right: 0;
+      width: 0;
+      height: 2px;
+      transform: translateY(-50%);
+    }
+
+    .button:hover span:nth-child(2) {
+      width: 100%;
+    }
+
+    .button span:nth-child(3) {
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      height: 0;
+      transform: translateX(-50%);
+    }
+
+    .button:hover span:nth-child(3) {
+      height: 100%;
+    }
+
+    .button span:nth-child(4) {
+      top: 50%;
+      left: 0;
+      width: 0;
+      height: 2px;
+      transform: translateY(-50%);
+    }
+
+    .button:hover span:nth-child(4) {
+      width: 100%;
+    }
+
+    .button-kkk {
+      --color: #71706e;
+      
+      
+    }
+
+     .button-black {
+      --color: #000000;
+    }
+    
+    
+    
+   .wrape {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttone {
+  min-width: 300px;
+  min-height: 60px;
+  display: inline-flex;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #C0C0C0;
+  background: #4FD1C5;
+background: linear-gradient(90deg, rgba(30,30,30,1) 0%, rgba(0,0,0,1) 100%);
+
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+  }
+
+.buttone::before {
+content: '';
+  border-radius: 1000px;
+  min-width: calc(300px + 12px);
+  min-height: calc(60px + 12px);
+  border: 6px solid #00FFCB;
+  box-shadow: 0 0 60px rgba(0,255,203,.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+.buttone:hover, 
+.button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+.buttone:hover::before, 
+.button:focus::before {
+  opacity: 1;
+}
+
+.buttone::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid #00FFCB;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+.buttone:hover::after, 
+.button:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+    
+      .card {
+        background-color: transparent;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+        color: black; /* Text color */
+    }
+    .card-title {
+        font-weight: bold;
+        margin-bottom: 5px;
+        padding: 5px; /* Adding padding to the title */
+        border: 1px solid #ccc; /* Adding border to the title */
+        border-radius: 5px; /* Adding border radius */
+        background-color: #71706e; /* Background color for the title box */
+    }
+    
+    
+
+/* New style for the powered-by text */
+.powered-by {
+    font-size: 0.98em; 
+    color: #ffff; 
+    text-align: center; 
+    margin-top: 0.1px; 
+}
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1%; /* Adjust height as needed */
+    width: 100%; /* Adjust width as needed */
+}
+
+
+.box {
+    width: 200px;
+    height: 40px;
+    background:  #71706e;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 16px;
+    outline: none;
+    overflow: hidden;
+    transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+    
+    /* Flexbox properties to center content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.box:hover {
+    background: #222;
+    box-shadow: 0 0 15px white;
+}
+
+.box:focus {
+    background: black;
+    box-shadow: 0 0 20px white;
+    color: #fff;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s, height 0.4s;
+}
+
+.box:focus::after {
+    width: 200%;
+    height: 200%;
+}
+
+.box option {
+    background: black;
+    color: white;
+    padding: 10px;
+}
+
+        
+        
+    </style>
+</head>
+<body>
+  
+    <main>
+        <div class="background"></div>     
+        <div class="foreground"></div>
+    </main>
+
+    <header>
+        <div class="overlay">
+       
+            <div class="wrapper" style="padding: 15px;">
+            
+                <div class="bg">PROGRAMMING</div>
+                <div class="fg">PROGRAMMING</div>
+                
+            </div>
+     
+            <div class="powered-by">&copy;Designed by Amer Alghanem</div>
+            <p style="padding: 20px;">Programming is the process of creating instructions that enable computers to perform tasks and solve problems. It plays a crucial role in various fields such as software development, data analysis, artificial intelligence, and web development. The benefits of programming are vast; it enhances efficiency and productivity by automating repetitive tasks, enables innovation through the development of new technologies, and improves problem-solving skills. Furthermore, programming drives economic growth by creating job opportunities and empowering businesses to operate more effectively in a digital world.</p>
+            
+   
+
+            
+            <div class="center" >
+     <select id="sectionSelect" class="box">
+                <option value="PYTHON">PYTHON</option>
+                <option value="JAVA">JAVA</option>
+                <option value="C++">C++</option>
+                <option value="PHP">PHP</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="JS">JAVASCRIPT</option>
+            </select>
+          
+             </div>
+  
+    
+        
+<!-------------------------------------------------------------------------------------------------------------------->
+               <section id="PYTHON">
+
+                <div class="container"  id="PYTHON">
+                <h1 class="card-title"> PYTHON </h1>
+                
+                                          
+                    <div class="button-wrapper"> 
+                       <div class="card">
+                       
+           
+            <p>    1) Data analysis and machine learning </br>
+                   2) Web development </br>
+                   3) Automation or scripting </br>
+                   4) Software testing and prototyping</br>
+                   5) Everyday tasks  </br> </p>
+        </div>
+                    
+                    <button onclick="window.location.href='https://www.learnpython.org/'" class="button button-kkk" > LEARN PYTHON </button>
+                    <button onclick="window.location.href='https://www.w3schools.com/python/'" class="button button-kkk" > W3SCHOOL </button>
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=eWRfhZUzrAc'" class="button button-kkk" > FREECODECAMP </button>
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=NpmFbWO6HPU'" class="button button-kkk" > TECH WITH TIM </button>
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=QXeEoD0pB3E&list=PLsyeobzWxl7poL9JTVyndKe62ieoN-MZ3'" class="button button-kkk" > TELUSKO </button>
+                    <button onclick="window.location.href='https://www.codecademy.com/catalog/language/python'" class="button button-kkk" > CODECADEMY </button>
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=tKTZoB2Vjuk'" class="button button-kkk" > GOOGLE </button>
+                    
+                    </div>
+                </div>
+ <!--------------------------------------------------------------------------------------------------------------------------------------->
+                  <section id="JAVA">
+
+                <div class="container"  id="JAVA">
+                <h1 class="card-title" > JAVA </h1>
+                
+                                          
+                    <div class="button-wrapper"> 
+                       <div class="card">
+                       
+          
+            <p>    1) Building and running mobile applications </br>
+                   2) Building and scaling cloud applications</br>
+                   3) Developing chatbots and other marketing tools</br>
+                   4) Powering enterprise-level web applications</br>
+                   5) Supporting artificial intelligence (AI) and internet of things (IoT) devices </br> </p>
+        </div>
+                    
+                    <button onclick="window.location.href='https://www.programiz.com/java-programming'" class="button button-kkk" > PROGRAMIZ </button>
+                    <button onclick="window.location.href='https://www.w3schools.com/java/'" class="button button-kkk" > W3SCHOOL </button>
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=GoXwIVyNvX0&list=PLWKjhJtqVAbnRT_hue-3zyiuIYj0OlpyG'" class="button button-kkk" > FREECODECAMP </button>
+                    
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=bm0OyhwFDuY&list=PLsyeobzWxl7pe_IiTfNyr55kwJPWbgxB5'" class="button button-kkk" > TELUSKO </button>
+                    <button onclick="window.location.href='https://www.codecademy.com/learn/learn-java'" class="button button-kkk" > CODECADEMY </button>
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=r59xYe3Vyks&list=PLS1QulWo1RIbfTjQvTdj8Y6yyq4R7g-Al'" class="button button-kkk" > PROGRAMMINGKNOWLEDGE </button>
+                    
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=mNvJipMTKSM&list=PLCInYL3l2AajYlZGzU_LVrHdoouf8W6ZN'" class="button button-kkk" > ADEL NASIM </button>
+                    
+                    </div>
+                </div>
+        
+       <!---------------------------------------------------------------------------------------------------------------------------------------> 
+            <section id="C++">
+
+                <div class="container"  id="C++">
+                <h1 class="card-title" > C++ </h1>
+                
+                                          
+                    <div class="button-wrapper"> 
+                       <div class="card">
+                       
+          
+         <p>    1) Operating Systems </br>
+                   2) Games </br>
+                   3) GUI Based Application </br>
+                   4) Embedded Systems</br>
+                   5) Compilers  </br> </p>
+                   
+        </div>
+                    
+                    <button onclick="window.location.href='https://www.learncpp.com/'" class="button button-kkk" > LEARN/C++ </button>
+                    <button onclick="window.location.href='https://www.w3schools.com/cpp/default.asp'" class="button button-kkk" > W3SCHOOL </button>
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=vLnPwxZdW4Y&t=41s'" class="button button-kkk" > FREECODECAMP "1" </button>
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=8jLOx1hD3_o'" class="button button-kkk" > FREECODECAMP "2" </button>
+                    
+                    <button onclick="window.location.href='https://www.educative.io/blog/how-to-learn-cpp-the-guide-for-beginners'" class="button button-kkk" > EDUCATIVE </button>
+                    <button onclick="window.location.href='https://www.codecademy.com/learn/learn-c-plus-plus'" class="button button-kkk" > CODECADEMY </button>
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=GQp1zzTwrIg'" class="button button-kkk" > CODEBEAUTY </button>
+                    
+                    
+                    
+                    </div>
+                </div>
+        
+               <!---------------------------------------------------------------------------------------------------------------------------------------> 
+        
+         <section id="PHP">
+
+                <div class="container"  id="PHP">
+                <h1 class="card-title" > PHP </h1>
+                
+                                          
+                    <div class="button-wrapper"> 
+                       <div class="card">
+                       
+          
+            <p>    1) Server-side scripting </br>
+                   2) Command-line scripting  </br>
+                   3) Writing desktop applications </br> </p>
+        </div>
+                    
+                    <button onclick="window.location.href='https://www.learn-php.org/'" class="button button-kkk" > LEARNPHP </button>
+                    <button onclick="window.location.href='https://www.w3schools.com/php/'" class="button button-kkk" > W3SCHOOL </button>
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=OK_JCtrrv-c'" class="button button-kkk" > FREECODECAMP </button>
+                    
+                    <button onclick="window.location.href='https://www.phptutorial.net/'" class="button button-kkk" > PHP/TUTORIAl </button>
+                    <button onclick="window.location.href='https://www.codecademy.com/learn/paths/php-skill'" class="button button-kkk" > CODECADEMY </button>
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=sVbEyFZKgqk&list=PLr3d3QYzkw2xabQRUpcZ_IBk9W50M9pe-'" class="button button-kkk" > PROGRAM WITH GIO </button>
+                    
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=pszZMzI9a7A'" class="button button-kkk" > NOUR HOMSI </button>
+                    
+                    </div>
+                </div>
+         <!---------------------------------------------------------------------------------------------------------------------------------------> 
+        
+         <section id="HTML">
+
+                <div class="container"  id="HTML">
+                <h1 class="card-title" > HTML </h1>
+                
+                                          
+                    <div class="button-wrapper"> 
+                       <div class="card">
+                       
+          
+              <p>    (HTML) is widely use­d as a markup language for developing we­b pages and applications. It provides the fle­xibility to include images, links, and various   types of conte­nt. In essence, HTML se­rves as a straightforward programming language that simplifies the­ creation of basic web pages. Through its structural e­lements such as headings, paragraphs, lists, quotations, and more­, HTML enables the construction of we­ll-organized documents. To define­ different ele­ments within an HTML document, tags enclose­d in angle brackets are utilize­d.
+
+                    
+                      </p>
+
+
+        </div>
+                    
+                    <button onclick="window.location.href='https://www.learn-html.org/'" class="button button-kkk" > LEARNHTML </button>
+                    <button onclick="window.location.href='https://www.w3schools.com/html/'" class="button button-kkk" > W3SCHOOL </button>
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=pQN-pnXPaVg'" class="button button-kkk" > FREECODECAMP </button>
+                    
+                    <button onclick="window.location.href='https://web.dev/learn/html/'" class="button button-kkk" >WEB.DEV</button>
+                    <button onclick="window.location.href='https://www.codecademy.com/learn/learn-html'" class="button button-kkk" > CODECADEMY </button>
+                    <button onclick="window.location.href='https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics'" class="button button-kkk" > MOZILA </button>
+                    
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=FQdaUv95mR8&t=75s'" class="button button-kkk" > KEVIN STRATVERT </button>
+                    
+                    </div>
+                </div>
+        
+        <!---------------------------------------------------------------------------------------------------------------------------------------> 
+        
+         <section id="CSS">
+
+                <div class="container"  id="CSS">
+                <h1 class="card-title" > CSS </h1>
+                
+                                          
+                    <div class="button-wrapper"> 
+                       <div class="card">
+                       
+          
+              <p>    (CSS) comes into play as a style­ sheet language that gove­rns how a webpage appears visually. By applying CSS rule­s to web browsers’ interpre­tation of HTML or XML documents, consistent and appealing style­s can be achieved uniformly across all e­lements
+                    
+                      </p>
+
+
+        </div>
+                    
+                    <button onclick="window.location.href='https://www.learn-html.org/'" class="button button-kkk" > LEARNHTML </button>
+                    <button onclick="window.location.href='https://www.w3schools.com/Css/'" class="button button-kkk" > W3SCHOOL </button>
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=ieTHC78giGQ'" class="button button-kkk" > FREECODECAMP </button>
+                    
+                    <button onclick="window.location.href='https://web.dev/learn/css/'" class="button button-kkk" >WEB.DEV</button>
+                    <button onclick="window.location.href='https://www.codecademy.com/learn/learn-css'" class="button button-kkk" > CODECADEMY </button>
+                    <button onclick="window.location.href='https://css-tricks.com/learn-css/'" class="button button-kkk" > CSS/TRICKS </button>
+                    
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=_QO55W7KPmI&list=PLknwEmKsW8Os7rKViMCL8x6irVJT7McSS'" class="button button-kkk" > ABDELRAHMAN GAMAL </button>
+                    
+                    </div>
+                </div>
+        
+              
+        <!---------------------------------------------------------------------------------------------------------------------------------------> 
+        
+         <section id="JS">
+
+                <div class="container"  id="JS">
+                <h1 class="card-title" > JAVA SCRIPT </h1>
+                
+                                          
+                    <div class="button-wrapper"> 
+                       <div class="card">
+                       
+          
+              <p>  1) Widely used in web application and web development </br>
+                   2) Mobile Application</br>
+                   3) Game Development </br>
+                   4) Server Application</br>
+                   5) Web Server  </br>
+                    
+                      </p>
+
+
+        </div>
+                    
+                    <button onclick="window.location.href='https://www.learn-js.org/'" class="button button-kkk" > LEARNJS </button>
+                    <button onclick="window.location.href='https://www.w3schools.com/Js/'" class="button button-kkk" > W3SCHOOL </button>
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=PkZNo7MFNFg'" class="button button-kkk" > FREECODECAMP </button>
+                    
+                    <button onclick="window.location.href='https://www.programiz.com/javascript'" class="button button-kkk" >PROGRAMIZ</button>
+                    <button onclick="window.location.href='https://www.codecademy.com/learn/introduction-to-javascript'" class="button button-kkk" > CODECADEMY </button>
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=GM6dQBmc-Xg&list=PLDoPjvoNmBAx3kiplQR_oeDqLDBUDYwVv'" class="button button-kkk" > ELZERO SCHOOL </button>
+                    
+                    <button onclick="window.location.href='https://www.youtube.com/watch?v=cpoXLj24BDY'" class="button button-kkk" > KG </button>
+                    
+                    </div>
+                </div>
+        
+        
+         <!--------------------------------------------------------------------------------------------------------------------------------------->
+        
+        
+        
+    </header>
+    
+  
+     
+ 
+    <script>
+        let c = 45;
+
+        function draw() {
+            document.documentElement.style.setProperty('--direction', c++ + 'deg');
+            requestAnimationFrame(draw);
+        }
+
+        requestAnimationFrame(draw);
+        
+        document.getElementById('sectionSelect').addEventListener('change', function() {
+            var selectedSection = this.value;
+            document.getElementById(selectedSection).scrollIntoView({behavior: 'smooth'});
+        });
+        
+    </script>
+</body>
+</html>
