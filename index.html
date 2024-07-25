@@ -3,42 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NES Library</title>
+  <title>NES&ULTRA LIBRARY</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200" rel="stylesheet">
   <style>
-    * {
+  *{
       padding: 0;
-      margin: -1;
+      margin: 0;
       box-sizing: border-box;
     }
 
-  body {
-  background-image: url('658810.jpg');
-  background-size: cover;
-  -webkit-animation: slidein 100s;
-  animation: slidein 100s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-  animation-direction: alternate;
-  color: black;
-  font-family: 'Roboto', sans-serif;
-}
+    body {
+      background-image: url('https://www.just.edu.jo/aboutjust/Gallery/IMG_0222.JPG');
+      background-size: cover;
+      -webkit-animation: slidein 100s;
+      animation: slidein 100s;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-direction: alternate;
+      animation-direction: alternate;
+      color: black;
+      font-family: 'Roboto', sans-serif;
+    }
 
-@-webkit-keyframes slidein {
-  from { background-position: top; background-size: 100%; }
-  to { background-position: top; background-size: 150%; }
-}
+    @-webkit-keyframes slidein {
+      from { background-position: top; background-size: 3000px; }
+      to { background-position: -100px 0px; background-size: 2750px; }
+    }
 
-@keyframes slidein {
-  from { background-position: top; background-size: 100%; }
-  to { background-position: top; background-size: 150%; }
-}
-
+    @keyframes slidein {
+      from { background-position: top; background-size: 3000px; }
+      to { background-position: -200px 0px; background-size: 2750px; }
+    }
 
     .navbar-brand {
       color: black !important;
@@ -123,25 +122,26 @@
       color: black;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-weight: normal;
-      width: 100%;
-      text-align: center;
-      font-size: 16vw;
-      background: linear-gradient(
-        -45deg, 
-        #FFFFFF 25%, 
-        #B9F2FF 25%, 
-        #FFFFFF 50%, 
-        #FFFFFF 50%, 
-        #B9F2FF 75%, 
-        #B9F2FF 75%, 
-        #B9F2FF
-      );
+  .logo {
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: normal;
+    width: 100%;
+    font-size: 10vw;
+    background: linear-gradient(
+        -60deg,
+        #FFD700 20%,    /* Gold */
+        #87CEEB 20%,    /* Sky Blue */
+        #87CEEB 40%,   
+        #FFD700 40%,   
+        #FFD700 60%,   
+        #87CEEB 60%,   
+        #87CEEB 80%,   
+        #FFD700 80%
+    );
+     color: transparent;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-size: 20px 20px;
@@ -164,8 +164,7 @@
       background-size: cover;
       background-attachment: fixed;
       position: relative;
-      
-      border-radius: 0 0 85% 85% / 30%;
+     
     }
 
     header .overlay {
@@ -177,39 +176,12 @@
       background-image: url ('https://www.just.edu.jo/aboutjust/Gallery/just-k%20%20(22).JPG');
     
     }
-
-    .shine-text {
-      font-weight: 900;
-      text-align: center;
-      font-size: 100px;
-      font-family: sans-serif;
-      text-transform: uppercase;
-      background: black ;
-      letter-spacing: 5px;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-repeat: no-repeat;
-      background-size: 70%;
-      animation: shine 1s linear infinite;
-      position: relative;
-      
-    }
-
-    @keyframes shine {
-      0% {
-    filter: hue-rotate(0deg);
-  }
-  100% {
-    filter: hue-rotate(360deg);
-  }
-    }
-
     h3, p {
       font-family: 'Open Sans', sans-serif;
-      margin-bottom: 2px;
-      color: #B9F2FF;
-      padding: 4px;
+      margin-bottom: 10px;
+      color: #000000;
+      padding: 5px;
+      
      
     }
 
@@ -250,7 +222,7 @@
     }
 
     .button:hover::before {
-      transform: scale(1);
+     transform: scale(1);
       transition-delay: 0.5s;
       box-shadow: 0 0 10px var(--color),
         0 0 30px var(--color),
@@ -326,6 +298,11 @@
     .button-blue {
       --color: #00BFFF;
     }
+    
+    
+     .button-black {
+      --color: #000000;
+    }
     .gold-border {
       border: 2px solid gold; /* Set the border width and color */
       border-radius: 10px; /* Add border radius for rounded corners */
@@ -345,24 +322,25 @@
     }
 
     .welcome-text {
-      --font-size: 5vmin; /* Adjusted font size */
+      --font-size: 10vmin; /* Adjusted font size */
       --font-weight: 600;
       --letter-spacing: calc(1em / 100);
       box-sizing: border-box;
       display: grid;
       font-family: Poppins, sans-serif;
       margin: 0;
-      min-block-size: 1vh;
+      min-block-size: 5vh;
       place-items: center;
-      padding: 20vmin;
+      padding: 13vmin;
     }
 
     .welcome-text h1 {
       background-clip: text;
-      background-image: linear-gradient(to right,  #B9F2FF, #B9F2FF, #B9F2FF, #0000);
+      background-image: linear-gradient(to right, #87CEEB, #00008B, #87CEEB, #00008B, #87CEEB);
+
       color: transparent;
       font-size: var(--font-size);
-      font-weight: var(--font-weight);
+      font-weight: 7vmin;
       letter-spacing: var(--letter-spacing);
       padding: calc(--stroke-width / 23);
       -webkit-text-stroke-color: transparent;
@@ -372,9 +350,9 @@
    .welcome-text p {
   font-size: 3vmin; /* Smaller font size for the paragraph */
   color: #ffffff; /* Adjusted text color for better readability */
-  background-color: #D4AF37; /* Sky blue background color */
-  padding: 10px; /* Padding inside the box */
-  border-radius: 10px; /* Optional: Rounded corners */
+  background-color: #87CEEB; /* Sky blue background color */
+  padding: 7px; /* Padding inside the box */
+  border-radius: 16px; 
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
@@ -440,33 +418,81 @@ div.fg{
   transform: scale(1);
   
 }
-   
-    
+
+.reduced-padding {
+    margin: 0; /* Removes margin */
+    padding: 10px 0; /* Adjust padding to reduce space */
+}
+
+/* Media Queries for Responsive Design */
+
+
+@media (max-width: 992px) {
+    .wrapper {
+        font-size: clamp(2em, 6vw, 6rem);
+    }
+    .wrapper > div {
+        font-size: clamp(2em, 6vw, 6rem);
+        -webkit-text-stroke: 2px transparent;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        font-size: clamp(2em, 5vw, 5rem);
+    }
+    .wrapper > div {
+        font-size: clamp(2em, 5vw, 5rem);
+        -webkit-text-stroke: 1.5px transparent;
+    }
+}
+
+@media (max-width: 576px) {
+    .wrapper {
+        font-size: clamp(2em, 4vw, 4rem);
+    }
+    .wrapper > div {
+        font-size: clamp(2em, 4vw, 4rem);
+        -webkit-text-stroke: 1px transparent;
+    }
+}
   </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="#" onclick="location.reload()" >NES Library</a>
+    <a class="navbar-brand" href="#" onclick="location.reload()">NES&ULTRA Library</a>
   </nav>
 
   <!-- Header Section -->
   <header>
     <div class="overlay">
-       <div class="wrapper">
-  <div class="bg"> NES </div>
-  <div class="fg"> NES  </div>
-</div>
-      <h3 >We provide the best educational resources</h3>
-      <p>Explore courses and enhance your knowledge</p>
-      <button onclick="showSection('courses')" class="button button-blue" role="button" >📚 Explore Courses 📚 </button>
-      <br></br>
-      <button onclick="window.location.href='https://www.just.edu.jo/ar/FacultiesandDepartments/it/Pages/viewplan.aspx?planno=565'" class="button button-blue" role="button">📋 Study Plan 2021 📋 </button> 
-      
-      <button onclick="window.location.href='https://drive.google.com/file/d/1OFL0xZu9XLqow9gAVup8E5_DXhd5r5Qq/view?fbclid=IwZXh0bgNhZW0CMTAAAR2akp1xWQ-J-qSIsH6VJKPeMaSRts2OEbzEBjku7zGJDpGL4jwiCBB3zvI_aem_ATxZXwjvlm4aJGLd60qrDUNBY7hAC3QsWyK3HtVOWy3toMKF8vCBhFXgOEdToF9LVLGof7b3wnQZWzj2z3bJd6xc'" class="button button-blue" role="button">🌴 Tree Plan 2021 🌴</button> <br></br>
+      <div class="wrapper ">
+        <div class="bg">NES & ULTRA</div>
+        <div class="fg">NES & ULTRA</div>
+      </div>
       
     
+
+      <h3 >We provide the best educational resources in Network and security engneering Major in just University </h3>
+      <p>Explore courses and enhance your knowledge</p><br></br>
+      <button onclick="showSection('courses')" class="button button-black" role="button" >📚 Explore Courses 📚 </button>
+      <br></br>
+      <button onclick="window.location.href='progaming.html'" class="button button-black" role="button">💻--PROGRAMMING--💻 </button>
+      <br></br>
+      <button onclick="window.location.href='ccna.html'" class="button button-black" role="button">🛜--CCNA RELATED--🛜 </button>
+<br></br>
+<button onclick="window.location.href='ctf.html'" class="button button-black" role="button"> 👨‍💻-CTF RELATED-👨‍💻 </button>
+<br></br>
+      <button onclick="window.location.href='https://www.just.edu.jo/ar/FacultiesandDepartments/it/Pages/viewplan.aspx?planno=565'" class="button button-blue" role="button">📋 Study Plan 2021 📋 </button> <br></br>
+      <button onclick="window.location.href='train.html'" class="button button-blue" role="button">🧑🏼‍🎓 about training 🧑🏼‍🎓</button> <br></br>
       
+      <button onclick="window.location.href='https://drive.google.com/file/d/1OFL0xZu9XLqow9gAVup8E5_DXhd5r5Qq/view?fbclid=IwZXh0bgNhZW0CMTAAAR2akp1xWQ-J-qSIsH6VJKPeMaSRts2OEbzEBjku7zGJDpGL4jwiCBB3zvI_aem_ATxZXwjvlm4aJGLd60qrDUNBY7hAC3QsWyK3HtVOWy3toMKF8vCBhFXgOEdToF9LVLGof7b3wnQZWzj2z3bJd6xc'" class="button button-blue" role="button">🌴  Tree Plan 2021  🌴</button> <br></br>
+      
+
+ 
+ 
+      <button onclick="window.location.href='https://www.just.edu.jo/aboutjust/map/Pages/default.aspx'" class="button button-blue " role="button">🗺️ JUST MAP 🗺️ </button>
     </div>
     
     
@@ -475,16 +501,17 @@ div.fg{
   <!-- NES Team Section -->
   <div id="team" class="container mt-5 section active">
     <div class="welcome-text">
-      <h1>Welcome to NES Library</h1>
-      <p>We are NES Team, dedicated to providing the best educational resources in network engineering and security field in just university to help you succeed. Our team is passionate about learning and teaching, and we strive to bring you the most comprehensive and up-to-date materials available </p>
+      <h1> Welcome to NES&ULTRA Library</h1>
+      <p>We are NES&ULTRA Team, dedicated to providing the best educational resources in network engineering and security field in just university to help you succeed. Our team is passionate about learning and teaching, and we strive to bring you the most comprehensive and up-to-date materials available </p>
       <!-- Map Button Section -->
       <div class="text-center mt-4">
-      <button onclick="window.location.href='https://www.just.edu.jo/aboutjust/map/Pages/default.aspx'" class="button button-gold " role="button">🗺️ JUST MAP 🗺️ </button>
+</button>
 
       </div>
     </div>
     <div class="text-center">
-      <div class="logo">NES</div>
+        <img src="logo.png" alt="logo">
+        <img src="logo2.png" alt="logo2">
     </div>
   </div>
 
@@ -507,13 +534,14 @@ div.fg{
 
   <!-- Footer -->
   <footer class="text-Yallow text-center py-3 footer">
-    <span class="footer-text">&copy; 2024 NES Library. All rights reserved. Designed by Amer Alghanem</span>
+    <span class="footer-text">&copy; 2024 NES&ULTRA Library. All rights reserved. Designed by Amer Alghanem</span>
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script>
+  
     function showSection(sectionId) {
       // Hide all sections
       document.querySelectorAll('.section').forEach(section => {
@@ -532,6 +560,7 @@ div.fg{
 
     // Function to display courses
     function displayCourses(courses) {
+    
       const courseCardsContainer = document.getElementById('courseCards');
       let content = '';
       courses.forEach(course => {
@@ -551,152 +580,241 @@ div.fg{
     }
  const courseData = [
       {
-        name: 'c++ and c++ lap',
-        imageURL: 'https://c4.wallpaperflare.com/wallpaper/926/492/891/code-c-c-plus-plus-wallpaper-preview.jpg',
+        name: 'c++ and c++ lab   (مقدمة في البرمجة & مختبر البرمجة) ( ع ح101 )',
+        imageURL: 'https://th.bing.com/th/id/OIP.TKkLLW5inR_0rdtvWNh3-AHaER?rs=1&pid=ImgDetMain',
         linkURL: 'c++.html' <!-- Updated link URL -->
       },
       
       
        {
-        name: 'Ethics',
+        name: 'Ethics (القضايا المهنية والاخلاقية في الحوسبة) (ن م200)' ,
         imageURL: 'https://www.uib.no/sites/w3.uib.no/files/styles/content_main_wide_1x/public/w2/et/ethics_word_cloud.jpg?itok=_pJVMbJu&timestamp=1579189500',
         linkURL: 'Ethics.html' <!-- Updated link URL -->
       },
       
        {
-        name: 'Calculas 101',
+        name: 'Calculas 101 (تفاضل و تكامل (1)) (ع أ101ر)',
         imageURL: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj1Vd9TdMZs4z6Um7jRpEJZgb8NdkP4V_rzc5GqYDIaYRDEkDpN7pbAz9vg3EzjRUtu5aicb49prdaYnXYB1Ji5MDFtaE5odqLIrMNs-Tj_HnpTk4pYMOaCjlAIAH0nsP3VmE0Eu_FbyLbS/s1600/Calculus.jpg',
         linkURL: 'Calculas1.html' <!-- Updated link URL -->
       },
       
        {
-        name: 'Physics 101',
+        name: 'Physics 101 (فيزياء عامه (1)) (ع أ101ف)',
         imageURL: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEirpz5flcEOQNQPivoncPT8DrfXt_vWIsA1kvMNP38YFxDHmYAgvsstLGR383S_3Fov1J_NIjor5caCeWlnaGTfM_3ss117Pc9ouCNVvfhPCKlqgc7LJgD6nCJIETfCSMbRFFte5pxqJpWj/s640/Physics+101+DVD+Review.JPG',
         linkURL: 'ph1.html' <!-- Updated link URL -->
       },
       
        {
-        name: 'Chemistry 103',
+        name: 'Chemistry 103 (مقدمة في البرمجة الكينونية) (ع أ103ك)',
         imageURL: 'https://chemistryfinalexam.weebly.com/uploads/2/4/2/6/24263862/476326610.jpg',
         linkURL: 'che.html' <!-- Updated link URL -->
       },
       
         {
-        name: 'OBJECT- ORIENTED PROG & oop lap ',
+        name: 'OBJECT PROG & oop lab (مختبر البرمجة الكينونية) (ع ح112 )',
         imageURL: 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh4Z9YC9SC6ZQedm3TnmnZrooKSm3a6ecwm_1g6mvbh9PEtw6_vc1AcYFO7sRmyxfCwqjNL4sGbtpWv-XXoTG6zYcKo9v_mkkJQCl-F57Jb7-i8mjBAhYqxnCJIgc-hQTyrw9b1dq07eA8/w640-h320-rw/images.jpg',
         linkURL: 'obj.html' <!-- Updated link URL -->
       },
       
        {
-        name: 'Calculas2 ',
+        name: 'Calculas2 (تفاضل وتكامل (2)) (ع أ102ر )',
         imageURL: 'https://static.wixstatic.com/media/eab683_d7a4769f25f049df8c2b230efaa6928b~mv2.jpg/v1/fill/w_925,h_740,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/eab683_d7a4769f25f049df8c2b230efaa6928b~mv2.jpg',
         linkURL: 'Calculas2.html' <!-- Updated link URL -->
       },
       
         {
-        name: 'Physics 102',
+        name: 'Physics 102 (فيزياء عامه (2)) (ع أ102ف)',
         imageURL: 'https://he.kendallhunt.com/sites/default/files/9781465227898.jpg',
         linkURL: 'ph2.html' <!-- Updated link URL -->
       }, 
       
        {
-        name: 'DISCRETE',
+        name: 'DISCRETE (الرياضيات المتقطعه) (ع أ241ر)',
         imageURL: 'https://image.slidesharecdn.com/discretemathematicspresentationfinal-221007180625-61c6c8a4/85/discrete-mathematics-presentation-finalpptx-1-320.jpg?cb=1667561897',
         linkURL: 'disc.html' <!-- Updated link URL -->
       }, 
       
        {
-        name: 'Digital',
+        name: 'Digital  (تصميم المنطق الرقمي) (هك231)' ,
         imageURL: 'https://www.csoonline.com/wp-content/uploads/2023/06/future-human-technology-the-digital-age-thinking-and-technological-picture-id913645450-100851538-orig.jpg?resize=1024%2C683&quality=50&strip=all',
         linkURL: 'degi.html' <!-- Updated link URL -->
       }, 
       
       {
-        name: 'Circuit (سيركت)',
+        name: 'Circuit (تحليل الدوائر الكهربائيه) (كه212)',
         imageURL: 'https://m.media-amazon.com/images/I/71FLT0Xf17L._SY466_.jpg',
         linkURL: 'Circuit.html' <!-- Updated link URL -->
       }, 
       
       
       {
-        name: 'AUTOCAD',
+        name: 'AUTOCAD ( الرسم الهندسي (أ)) (مك200)',
         imageURL: 'https://drawings.archicgi.com/wp-content/uploads/2020/03/autocad-drawing-top-features-view-main.png',
         linkURL: 'cad.html' <!-- Updated link URL -->
       }, 
       
     
       {
-        name: 'PHYSICS LAB',
+        name: 'PHYSICS LAB (فيزياء عامه (عملي)) (ع أ107ف)',
         imageURL: 'https://www.my-tutor.com/wordpress/wp-content/uploads/2017/07/physics-e1499900879366-768x437.jpg',
         linkURL: 'phylap.html' <!-- Updated link URL -->
       }, 
       
       
       {
-        name: 'MATH INTERMEDIATE ANALYSIS (تحليل وسيط)',
+        name: 'MATH INTERMEDIATE ANALYSIS (تحليل وسيط) (ع أ201ر)',
         imageURL: 'https://i.thenile.io/r1000/9780486462974.jpg?r=5f6abc8891848',
         linkURL: 'MIA.html' <!-- Updated link URL -->
       }, 
       
 
       {
-        name: 'MATH  DIFFERENTIAL EQUATIONS (ديف)',
+        name: 'MATH  DIFFERENTIAL EQUATIONS (ديف) (ع أ203ر)',
         imageURL: 'https://th.bing.com/th/id/OIP.QQO-Cmk3gXwEUNrH33xLYAAAAA?rs=1&pid=ImgDetMain',
         linkURL: 'diff.html' <!-- Updated link URL -->
       }, 
       
       {
-        name: ' Digital Logic Design Lab',
+        name: ' Digital Lab (مختبر تصميم المنطق الرقمي) (هك232)',
         imageURL: 'https://th.bing.com/th/id/OIP.1KGSJHcIXp5SUtTfJ6VpTwAAAA?rs=1&pid=ImgDetMain',
         linkURL: 'digilap.html' <!-- Updated link URL -->
       },
        
       {
-        name: '  COMPUTER ORGANIZ AND DESIGN ',
+        name: '  COMPUTER ORGA (تصميم وتنظيم الحاسوب) (هك252)',
         imageURL: 'https://image3.slideserve.com/7013027/common-bus-system1-l.jpg',
         linkURL: 'orga.html' <!-- Updated link URL -->
       }, 
       
       {
-        name: '  INTRODUCTION TO WEB DESIGN ',
+        name: ' WEB DESIGN (مقدمة في تصميم صفحات الوب) (ن م201)',
         imageURL: 'https://th.bing.com/th/id/OIP.pAGmGWwNTbEjAvFoTtXUAAHaE8?rs=1&pid=ImgDetMain',
         linkURL: 'web.html' <!-- Updated link URL -->
       }, 
       
       {
-        name: '  INTRODUCTION TO LINEAR SYSTEMS (لينير)',
+        name: ' LINEAR SYSTEMS (لينير) (	كه204)',
         imageURL: 'https://cdn.vectorstock.com/i/1000v/40/99/matrix-mathematics-concept-flat-icon-vector-20664099.avif',
         linkURL: 'lin.html' <!-- Updated link URL -->
       }, 
       
       {
-        name: '  ELECTRICAL CIRCUITS LAB (لاب سيركت)',
+        name: '  ELECTRICAL CIRCUITS LAB (لاب سيركت)  (	كه213)',
         imageURL: 'https://siglentna.com/wp-content/uploads/2018/05/DSC_4937666.png',
         linkURL: 'circlab.html' <!-- Updated link URL -->
       }, 
       
       {
-        name: '  ENGINEERING MECHANICS (ميكانيكا)',
+        name: '  ENGINEERING MECHANICS (ميكانيكا) (مك215)',
         imageURL: 'https://th.bing.com/th/id/OIP.uGrBJc6uIpFsRgUecOT-yQHaE7?rs=1&pid=ImgDetMain',
         linkURL: 'mecan.html' <!-- Updated link URL -->
       }, 
       
        {
-        name: '  DATA STRUCTURES (داتا ستركشر)',
+        name: '  DATA STRUCTURES (داتا ستركشر) (ع أ211ع ح)',
         imageURL: 'https://www.techyloud.com/wp-content/uploads/2022/02/Data-Structure-assignement.jpg',
         linkURL: 'datas.html' <!-- Updated link URL -->
       }, 
       
       
        {
-        name: '  MICROPROCESSOR SYSTEMS (مايكرو)',
+        name: '  MICROPROCESSOR SYSTEMS (مايكرو) (هك351 )',
         imageURL: 'https://predictabledesigns.com/wp-content/uploads/2018/01/HeroImage2.jpg',
         linkURL: 'micro.html' <!-- Updated link URL -->
       }, 
       
       
       
+       {
+        name: '  INTRODUCTION TO UNIX (يونكس)(هش202)',
+        imageURL: 'https://c4.wallpaperflare.com/wallpaper/68/643/740/kali-linux-kali-linux-nethunter-linux-wallpaper-preview.jpg',
+        linkURL: 'unix.html' <!-- Updated link URL -->
+      }, 
       
+       {
+        name: ' PROBABILITY AND QUEUING THEORY (بروب) (هش301)',
+        imageURL: 'https://th.bing.com/th/id/OIP.noilt3PVCm0aMxsn_mhjXwAAAA?w=324&h=280&rs=1&pid=ImgDetMain',
+        linkURL: 'prob.html' <!-- Updated link URL -->
+      }, 
+      
+       {
+        name: ' DATA COMMUNICATION ( داتا كوم) (هش311)',
+        imageURL: 'https://th.bing.com/th/id/OIP.pGXZHR3_dI8ftxqthq6jzQHaEK?rs=1&pid=ImgDetMain',
+        linkURL: 'com.html' <!-- Updated link URL -->
+      },
+      
+        {
+        name: ' SIGNAL AND SYSTEMS ANALYSIS ( سيجنال) (كه260 ) ',
+        imageURL: 'https://i.ytimg.com/vi/jspAzZ_nsOs/hqdefault.jpg',
+        linkURL: 'signal.html' <!-- Updated link URL -->
+      },
+        {
+        name: ' ELECTRONICS ( الإلكترو) (كه321 )',
+        imageURL: 'https://th.bing.com/th/id/R.5bf17ed5a708bc3d70fe5c758cbe9b06?rik=gdDabtD7nhdQcw&pid=ImgRaw&r=0',
+        linkURL: 'electro.html' <!-- Updated link URL -->
+      },
+      
+      
+        {
+        name: '  COMPUTER ARCHITECTURE (الاركي) (هك352 )',
+        imageURL: 'https://th.bing.com/th/id/OIP.7ukMaJE53iS76CQR7MS59gHaEo?rs=1&pid=ImgDetMain',
+        linkURL: 'archi.html' <!-- Updated link URL -->
+      },
+      
+      
+       {
+        name: '  MICROPROCESSOR SYSTEMS LAB (لاب  مايكرو) (هك354 )',
+        imageURL: 'https://th.bing.com/th/id/OIP.qCD49poPgaCEkncFNbxMOQHaE0?rs=1&pid=ImgDetMain',
+        linkURL: 'lapmic.html' <!-- Updated link URL -->
+      },
+      
+       {
+        name: '  Database Systems (الداتا بيس) (ن م221) ',
+        imageURL: 'https://cdn.corporatefinanceinstitute.com/assets/database.jpeg',
+        linkURL: 'databas.html' <!-- Updated link URL -->
+      },
+      
+       {
+        name: '    COMPUTER NETWORKS (نتورك) (هش312 )',
+        imageURL: 'https://3.bp.blogspot.com/-RYHuf9GyjLQ/Vv0PEAfeaPI/AAAAAAAALfc/xF_kjs4bJGwvQoBT3LxqLvMmb8lCI6ysg/s1600/cisco-packet-tracer-download-free-windows1.jpeg',
+        linkURL: 'network.html' <!-- Updated link URL -->
+      },
+      
+      
+       {
+        name: '  ELECTRONIC CIRCUITS LAB ( لاب الالكترو ) (كه322)',
+        imageURL: 'https://th.bing.com/th/id/R.a7c141c141a9e413ae123bd9d4d1bee9?rik=YxAbn105jpveog&riu=http%3a%2f%2f3.bp.blogspot.com%2f-VwRNUkbHEZE%2fUcXPXNsBKQI%2fAAAAAAAAAEI%2fRxwYNdIXl2Q%2fs1600%2fdiode%2b(1).jpg&ehk=%2fNBfE6aVoLKIudI1ib73vv2w3BsJPalZfwzSGPBycc0%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1',
+        linkURL: 'labeelec.html' <!-- Updated link URL -->
+      },
+      
+      
+         {
+        name: '  OPERATION SYSTEM "OS" ( نظم التشغيل) (هك473)',
+        imageURL: 'https://www.researchgate.net/profile/Richard-Han/publication/246956458/figure/fig2/AS:298331239665696@1448139118887/Stack-snapshot-at-the-point-of-entry-to-a-procedure-AVR-GCC-assembly.png',
+        linkURL: 'os.html' <!-- Updated link URL -->
+      },
+      
+      
+        {
+        name: '   NETWORKS LABORATORY ( لاب النتورك ) (هش413)',
+        imageURL: 'https://th.bing.com/th/id/R.bedcd924ab6f4bd66622d1167292c0d6?rik=gTtNmYqdadwqqg&riu=http%3a%2f%2fbridgenetinc.net%2fimages%2fwysi_uploads%2fimages%2fcabling-image.jpg&ehk=lsGYFI%2fudEz6BnK3a36V7j%2bSTygYi4fJw4pKRjq5WTQ%3d&risl=&pid=ImgRaw&r=0',
+        linkURL: 'labnet.html' <!-- Updated link URL -->
+      },
+      
+      
+        {
+        name: ' WIRELESS( الشبكات اللاسلكية) (هش441)',
+        imageURL: 'https://th.bing.com/th/id/OIP._tzM8gYzyU4y5GN2_u-XyAHaHF?w=665&h=636&rs=1&pid=ImgDetMain',
+        linkURL: 'wireless.html' <!-- Updated link URL -->
+      },
+      
+      
+      
+       {
+        name: ' SECURITY ( سكيورتي) (هش441)',
+        imageURL: 'https://th.bing.com/th/id/OIP._tzM8gYzyU4y5GN2_u-XyAHaHF?w=665&h=636&rs=1&pid=ImgDetMain',
+        linkURL: 'secur.html' <!-- Updated link URL -->
+      },
       
       
       
@@ -710,6 +828,7 @@ div.fg{
 
     // Event listener for search input
     document.getElementById('courseSearch').addEventListener('input', filterCourses);
+    
   </script>
 </body>
 </html>
